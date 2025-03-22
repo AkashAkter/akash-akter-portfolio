@@ -1,6 +1,7 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import Link from "next/link";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function Home() {
   const handleResumeDownload = () => {
@@ -15,27 +16,50 @@ export default function Home() {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage:
-            "url(https://slimhamdi.net/sliim/demos/images/bg.jpg)",
+          backgroundImage: "url(/bg.jpg)",
         }}
       >
         <div
           className="hero-overlay"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
         ></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-lg px-6">
-            <h1 className="mb-5 text-5xl font-bold">Hi! I&apos;m AKASH.</h1>
-            <p className="mb-5 text-lg">
-              I&apos;m a Freelance UI/UX Designer and Developer based in London,
-              England.
+            <h1 className="mb-5 text-5xl font-bold text-white">
+              Hi! I&apos;m{" "}
+              <span
+                className="text-success"
+                style={{ textShadow: "0px 0px 20px #ffffff" }}
+              >
+                AKASH AKTER
+              </span>
+              .
+            </h1>
+
+            <p className="mb-5 text-lg text-white">
+              As a{" "}
+              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
+                full-stack developer
+              </span>
+              , I design smooth digital experiences. I transform ideas into
+              reality by bridging the gap between{" "}
+              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
+                {" "}
+                back-end{" "}
+              </span>
+              logic and{" "}
+              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
+                {" "}
+                front-end{" "}
+              </span>{" "}
+              creativity.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <button className="btn btn-outline btn-success">
-                More About Me
+              <button className="border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
+                <Link href="/About">About Me</Link>
               </button>
               <button
-                className="btn btn-outline btn-success"
+                className="border px-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300"
                 onClick={handleResumeDownload}
               >
                 See Resume
@@ -45,32 +69,26 @@ export default function Home() {
             {/* Social Links */}
             <div className="mt-6 flex justify-center gap-4 text-white text-xl">
               <a
-                href="https://github.com"
+                href="https://github.com/akashAkter/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="hover:text-gray-400 transition duration-300" />
+                <FaGithub className="hover:text-success transition duration-300" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/in/akash08akter"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="hover:text-gray-400 transition duration-300" />
+                <FaLinkedin className="hover:text-success transition duration-300" />
               </a>
+
               <a
-                href="https://twitter.com"
+                href="https://www.facebook.com/akashh.akter"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTwitter className="hover:text-gray-400 transition duration-300" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebook className="hover:text-gray-400 transition duration-300" />
+                <FaFacebook className="hover:text-success transition duration-300" />
               </a>
             </div>
           </div>
