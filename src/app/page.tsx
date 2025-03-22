@@ -26,17 +26,16 @@ export default function Home() {
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-lg px-6">
             <h1 className="mb-5 text-5xl font-bold text-white">
-              Hi! I&apos;m{" "}
+              Hi! I&apos;m <br />
               <span
-                className="text-success"
+                className="text-success text-6xl"
                 style={{ textShadow: "0px 0px 20px #ffffff" }}
               >
                 AKASH AKTER
               </span>
-              .
             </h1>
 
-            <p className="mb-5 text-lg text-white">
+            <p className="mb-5 text-2xl text-white">
               As a{" "}
               <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
                 full-stack developer
