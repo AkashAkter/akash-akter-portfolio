@@ -53,7 +53,7 @@ export default function Home() {
               </span>{" "}
               creativity.
             </p>
-            <div className="flex justify-center gap-4 flex-wrap">
+            <div className="flex justify-center gap-4 flex-wrap py-4">
               <Link href="/About">
                 <button className="border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
                   More About Myself
