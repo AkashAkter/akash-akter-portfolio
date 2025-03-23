@@ -54,14 +54,16 @@ export default function Home() {
               creativity.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <button className="border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
-                <Link href="/About">About Me</Link>
-              </button>
+              <Link href="/About">
+                <button className="border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
+                  More About Myself
+                </button>
+              </Link>
               <button
                 className="border px-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300"
                 onClick={handleResumeDownload}
               >
-                See Resume
+                Explore My Resume
               </button>
             </div>
 
