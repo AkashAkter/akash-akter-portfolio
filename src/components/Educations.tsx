@@ -4,7 +4,7 @@ const Educations = () => {
   return (
     <div>
       <h1
-        className="text-5xl font-bold text-success"
+        className="text-5xl font-bold text-success text-center my-10"
         style={{ textShadow: "0px 0px 20px #ffffff" }}
       >
         EDUCATION
