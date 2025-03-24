@@ -25,7 +25,7 @@ export default function Home() {
         ></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-lg px-6">
-            <h1 className="mb-5 text-5xl font-bold text-white">
+            <h1 className="mb-5 text-6xl font-bold text-white">
               Hi! I&apos;m <br />
               <span
                 className="text-success text-6xl"
@@ -35,7 +35,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mb-5 text-2xl text-white">
+            <p className="mb-5 text-3xl text-white">
               As a{" "}
               <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
                 full-stack developer
@@ -55,12 +55,12 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-4 flex-wrap py-4">
               <Link href="/About">
-                <button className="border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
+                <button className="text-xl border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
                   More About Myself
                 </button>
               </Link>
               <button
-                className="border px-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300"
+                className="text-xl border px-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300"
                 onClick={handleResumeDownload}
               >
                 Explore My Resume
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
 
             {/* Social Links */}
-            <div className="mt-6 flex justify-center gap-4 text-white text-xl">
+            <div className="mt-6 flex justify-center gap-4 text-white text-3xl">
               <a
                 href="https://github.com/akashAkter/"
                 target="_blank"
