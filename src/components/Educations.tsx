@@ -2,13 +2,18 @@ import Image from "next/image";
 
 const Educations = () => {
   return (
-    <div>
+    <div className="py-20">
       <h1
-        className="text-5xl font-bold text-success text-center my-10"
-        style={{ textShadow: "0px 0px 20px #ffffff" }}
+        className="text-5xl font-bold text-white mb-4 text-center"
+        style={{
+          textShadow:
+            "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
+          letterSpacing: "0.1em",
+        }}
       >
-        EDUCATION
+        EDUCATION HISTORY
       </h1>
+      <div className="w-24 h-1 bg-success mx-auto"></div>
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle">

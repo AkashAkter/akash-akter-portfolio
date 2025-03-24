@@ -88,15 +88,20 @@ const Skills = () => {
   ];
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 pb-20">
       <div className="hero-content text-center flex-col">
         <div className="max-w-md mb-12">
           <h1
-            className="text-5xl font-bold text-success"
-            style={{ textShadow: "0px 0px 20px #ffffff" }}
+            className="text-5xl font-bold text-white mb-4"
+            style={{
+              textShadow:
+                "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
+              letterSpacing: "0.1em",
+            }}
           >
-            TECHNOLOGIES I USE
+            TECHNOLOGY I WORK WITH
           </h1>
+          <div className="w-24 h-1 bg-success mx-auto"></div>
         </div>
 
         {/* Responsive Skills Grid */}

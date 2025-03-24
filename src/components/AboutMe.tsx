@@ -4,11 +4,16 @@ const AboutMe = () => {
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1
-            className="text-5xl font-bold text-success"
-            style={{ textShadow: "0px 0px 20px #ffffff" }}
+            className="text-5xl font-bold text-white mb-4"
+            style={{
+              textShadow:
+                "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
+              letterSpacing: "0.1em",
+            }}
           >
             ABOUT ME
           </h1>
+          <div className="w-24 h-1 bg-success mx-auto"></div>
           <p className="py-6 text-white text-2xl">
             A passionate full-stack developer skilled in{" "}
             <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
