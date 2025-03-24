@@ -3,7 +3,7 @@ import AboutMe from "../../components/AboutMe";
 import ProjectSection from "@/components/ProjectSection";
 import Educations from "@/components/Educations";
 import Skills from "@/components/Skills";
-import Header from "@/components/Header"; // Note the .client extension
+import Header from "@/components/Header";
 
 const page = () => {
   return (

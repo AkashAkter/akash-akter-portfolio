@@ -90,7 +90,7 @@ const Header = () => {
                 <FaLinkedin size={18} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:your.akash.akter08@gmail.com"
                 className="text-white hover:text-success transition-colors duration-300 hover:scale-110"
                 aria-label="Email"
               >
