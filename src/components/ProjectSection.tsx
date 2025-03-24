@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import projectsData from "../../projects.json";
+import Link from "next/link";
 
 const ProjectSection = () => {
   return (
@@ -70,14 +71,15 @@ const ProjectSection = () => {
                   </div>
 
                   <div className="card-actions justify-end">
-                    <button
+                    <Link
+                      href={`/projects/${project.id}`}
                       className="btn btn-success btn-lg text-white text-lg 
-                    hover:bg-transparent hover:text-success hover:border-success
-                    hover:shadow-[0_0_10px_#fff,0_0_20px_#fff,0_0_30px_#00ff00] 
-                    transition-all duration-300"
+  hover:bg-transparent hover:text-success hover:border-success
+  hover:shadow-[0_0_10px_#fff,0_0_20px_#fff,0_0_30px_#00ff00] 
+  transition-all duration-300"
                     >
                       View Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
