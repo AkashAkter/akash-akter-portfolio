@@ -3,14 +3,25 @@ import AboutMe from "../../components/AboutMe";
 import ProjectSection from "@/components/ProjectSection";
 import Educations from "@/components/Educations";
 import Skills from "@/components/Skills";
+import Header from "@/components/Header"; // Note the .client extension
 
 const page = () => {
   return (
     <div>
-      <AboutMe />
-      <ProjectSection />
-      <Skills />
-      <Educations />
+      <Header />
+      <section id="home">{/* Optional home section if you have one */}</section>
+      <section id="about">
+        <AboutMe />
+      </section>
+      <section id="projects">
+        <ProjectSection />
+      </section>
+      <section id="skills">
+        <Skills />
+      </section>
+      <section id="education">
+        <Educations />
+      </section>
     </div>
   );
 };

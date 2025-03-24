@@ -27,19 +27,20 @@ const ProjectSection = () => {
               className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-700"
             >
               <div className="flex flex-col lg:flex-row">
-                <div className="lg:w-1/2 p-6 relative">
-                  <Image
-                    src={project.mainImage}
-                    alt={project.title}
-                    width={800}
-                    height={450}
-                    className="rounded-xl object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500"
-                    style={{
-                      height: "320px",
-                      width: "100%",
-                    }}
-                    priority={project.id === 1} // Only prioritize first image
-                  />
+                <div className="lg:w-1/2 p-6 aspect-video relative">
+                  {" "}
+                  {/* Added aspect-video */}
+                  <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src={project.mainImage}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      quality={85}
+                      priority={project.id === 1}
+                    />
+                  </div>
                 </div>
                 <div className="card-body lg:w-1/2 p-8">
                   <h2 className="card-title text-4xl text-white mb-4 font-extrabold">
