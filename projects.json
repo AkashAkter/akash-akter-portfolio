@@ -1,0 +1,90 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Gym Trek",
+      "description": "A full-stack e-commerce app for gym products with cart management, Stripe payments, and advanced filtering.",
+      "features": [
+        "API debouncing for search",
+        "Cart management system",
+        "Stripe integration",
+        "Reload alert"
+      ],
+      "technologies": [
+        "React",
+        "Redux Toolkit",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Radix UI",
+        "Formik",
+        "Stripe"
+      ],
+      "clientRepo": "https://github.com/AkashAkter/gym-trek-client",
+      "serverRepo": "https://github.com/AkashAkter/gym-trek-server",
+      "liveUrl": "https://gym-trek-client.vercel.app/",
+      "mainImage": "/GymTrek/GymTrek.png",
+      "additionalImages": [
+        "/GymTrek/GT1.png",
+        "/GymTrek/GT2.png",
+        "/GymTrek/GT3.png",
+        "/GymTrek/GT4.png",
+        "/GymTrek/GT5.png"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Auto Buzz",
+      "description": "A marketplace for buying/selling used cars with Google Auth, appointments, and Stripe payments.",
+      "features": [
+        "Seller/customer accounts",
+        "Appointment booking",
+        "Google authentication",
+        "Stripe payment integration"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "TanStack Query",
+        "DaisyUI",
+        "Tailwind CSS",
+        "Stripe"
+      ],
+      "clientRepo": "https://github.com/AkashAkter/auto-buzz-client-repo",
+      "serverRepo": "https://github.com/AkashAkter/auto-buzz-server-repo",
+      "liveUrl": "https://auto-buzz-28ba2.web.app/",
+      "mainImage": "/AutoBuzz/AutoBuzz.png",
+      "additionalImages": [
+        "/AutoBuzz/AB1.png",
+        "/AutoBuzz/AB2.png",
+        "/AutoBuzz/AB3.png"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "AutoLimpio",
+      "description": "Car wash/service booking portal with admin controls, service comparisons, and countdown timers.",
+      "features": [
+        "Debounced API calls",
+        "Service comparison tool",
+        "Booking countdown timer",
+        "Admin role management"
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Shadcn",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Redux Query"
+      ],
+      "clientRepo": "https://github.com/AkashAkter/auto-limpio-client",
+      "serverRepo": "https://github.com/AkashAkter/auto-limpio-server",
+      "liveUrl": "https://auto-limpio-client.vercel.app/",
+      "mainImage": "/AutoLimpio/AutoLimpio.png",
+      "additionalImages": ["/AutoLimpio/AL1.png", "/AutoLimpio/AL2.png"]
+    }
+  ]
+}

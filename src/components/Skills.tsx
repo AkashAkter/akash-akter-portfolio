@@ -95,7 +95,7 @@ const Skills = () => {
             className="text-5xl font-bold text-success"
             style={{ textShadow: "0px 0px 20px #ffffff" }}
           >
-            SKILLS
+            TECHNOLOGIES I USE
           </h1>
         </div>
 
