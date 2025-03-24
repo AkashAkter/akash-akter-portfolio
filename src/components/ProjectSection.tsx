@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import projectsData from "../../projects.json";
 
 const ProjectSection = () => {
@@ -26,13 +27,20 @@ const ProjectSection = () => {
               className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-700"
             >
               <div className="flex flex-col lg:flex-row">
-                <figure className="lg:w-1/2 p-6">
-                  <img
+                <div className="lg:w-1/2 p-6 relative">
+                  <Image
                     src={project.mainImage}
                     alt={project.title}
-                    className="rounded-xl h-80 w-full object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500"
+                    width={800}
+                    height={450}
+                    className="rounded-xl object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500"
+                    style={{
+                      height: "320px",
+                      width: "100%",
+                    }}
+                    priority={project.id === 1} // Only prioritize first image
                   />
-                </figure>
+                </div>
                 <div className="card-body lg:w-1/2 p-8">
                   <h2 className="card-title text-4xl text-white mb-4 font-extrabold">
                     {project.title}
