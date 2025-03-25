@@ -27,7 +27,6 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
   return (
     <div className="min-h-screen bg-base-200 py-12">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Back Button */}
         <button
           onClick={() => router.back()}
           className="btn btn-ghost mb-8 text-white hover:bg-success/20 group"
@@ -36,9 +35,7 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
           Back to Projects
         </button>
 
-        {/* Project Card */}
         <div className="card bg-neutral shadow-2xl border border-gray-700 overflow-hidden">
-          {/* Image Gallery with Carousel */}
           <div className="relative aspect-video w-full">
             <Carousel
               showArrows={true}
@@ -65,9 +62,7 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
             </Carousel>
           </div>
 
-          {/* Project Content */}
           <div className="card-body p-8">
-            {/* Title and Technologies */}
             <div className="mb-6">
               <h1 className="text-4xl font-bold text-white mb-4">
                 {project.title}
@@ -84,7 +79,6 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
               </div>
             </div>
 
-            {/* Project Description */}
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-3 border-b border-success/50 pb-2">
                 Project Overview
@@ -94,7 +88,6 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
               </p>
             </div>
 
-            {/* Key Features */}
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-white mb-3 border-b border-success/50 pb-2">
                 Key Features
@@ -112,7 +105,6 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
               </ul>
             </div>
 
-            {/* Project Links */}
             <div className="flex flex-wrap gap-4 justify-end mt-8">
               {project.liveUrl && (
                 <a
