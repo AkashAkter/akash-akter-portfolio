@@ -13,7 +13,11 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import projectsData from "../../../../projects.json";
 
-const ProjectDetails = ({ params }: { params: { id: string } }) => {
+interface ProjectDetailsProps {
+  params: { id: string };
+}
+
+const ProjectDetails = ({ params }: ProjectDetailsProps) => {
   const router = useRouter();
   const project = projectsData.projects.find(
     (p) => p.id.toString() === params.id
