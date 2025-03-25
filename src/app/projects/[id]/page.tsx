@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import {
   FaGithub,
@@ -13,14 +13,13 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import projectsData from "../../../../projects.json";
 
-interface ProjectDetailsProps {
-  params: { id: string };
-}
-
-const ProjectDetails = ({ params }: ProjectDetailsProps) => {
+const ProjectDetails = () => {
   const router = useRouter();
+  const params = useParams(); // Correct way to get dynamic route params in a client component
+  const projectId = params.id as string; // Ensure it's treated as a string
+
   const project = projectsData.projects.find(
-    (p) => p.id.toString() === params.id
+    (p) => p.id.toString() === projectId
   );
 
   if (!project) {
