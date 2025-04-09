@@ -9,6 +9,7 @@ import {
   FaUser,
   FaCode,
   FaGraduationCap,
+  FaBriefcase,
 } from "react-icons/fa";
 
 const Header = () => {
@@ -46,19 +47,27 @@ const Header = () => {
                 <FaUser className="mr-2" />
                 About
               </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="flex items-center text-white hover:text-success transition-colors duration-300"
-              >
-                <FaCode className="mr-2" />
-                Projects
-              </button>
+
               <button
                 onClick={() => scrollToSection("skills")}
                 className="flex items-center text-white hover:text-success transition-colors duration-300"
               >
                 <FaCode className="mr-2" />
                 Skills
+              </button>
+              <button
+                onClick={() => scrollToSection("experience")}
+                className="flex items-center text-white hover:text-success transition-colors duration-300"
+              >
+                <FaBriefcase className="mr-2" />
+                Experience
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="flex items-center text-white hover:text-success transition-colors duration-300"
+              >
+                <FaCode className="mr-2" />
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection("education")}
