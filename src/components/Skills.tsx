@@ -88,7 +88,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="hero min-h-screen bg-base-200 pb-20">
+    <div className="hero min-h-screen bg-base-200 pb-20 pt-20">
       <div className="hero-content text-center flex-col">
         <div className="max-w-md mb-12">
           <h1
@@ -105,7 +105,7 @@ const Skills = () => {
         </div>
 
         {/* Responsive Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-24 px-4">
           {skills.map((skill, index) => (
             <div
               key={index}

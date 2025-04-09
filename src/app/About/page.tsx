@@ -4,6 +4,7 @@ import ProjectSection from "@/components/ProjectSection";
 import Educations from "@/components/Educations";
 import Skills from "@/components/Skills";
 import Header from "@/components/Header";
+import CommentSection from "@/components/CommentSection";
 
 const page = () => {
   return (
@@ -22,6 +23,7 @@ const page = () => {
       <section id="education">
         <Educations />
       </section>
+      <CommentSection />
     </div>
   );
 };

@@ -42,7 +42,7 @@ const Educations = () => {
               />
             </svg>
           </div>
-          <div className="timeline-start mb-10 md:text-end">
+          <div className="timeline-start mb-10 md:text-end text-white">
             <time className="font-mono italic text-xl">2020 - 2024</time>
             <div className="text-2xl font-black">
               B.Sc. in Computer Science & Engineering
@@ -71,12 +71,10 @@ const Educations = () => {
               />
             </svg>
           </div>
-          <div className="timeline-end md:mb-10">
+          <div className="timeline-end md:mb-10 text-white">
             <time className="font-mono italic text-xl">2018</time>
-            <div className="text-2xl font-black">
-              Higher Secondary School Certificate
-            </div>
-            <p className="font-white text-xl">
+            <div className="text-2xl ">Higher Secondary School Certificate</div>
+            <p className=" text-xl">
               <strong>Govt. Shah Sultan College, Bogura</strong>
               <br />
               GPA: 3.92/5.00
@@ -102,12 +100,10 @@ const Educations = () => {
               />
             </svg>
           </div>
-          <div className="timeline-start mb-10 md:text-end">
+          <div className="timeline-start mb-10 md:text-end text-white">
             <time className="font-mono italic text-xl">2016</time>
-            <div className="text-2xl font-black">
-              Secondary School Certificate
-            </div>
-            <p className="font-white text-xl">
+            <div className="text-2xl ">Secondary School Certificate</div>
+            <p className=" text-xl">
               <strong>Faizullah High School, Bogura</strong>
               <br />
               GPA: 5.00/5.00
