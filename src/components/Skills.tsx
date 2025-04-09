@@ -1,11 +1,12 @@
+"use client";
 import React from "react";
 import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
   FaGithub,
-  FaNpm,
   FaPython,
+  FaJava,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -14,45 +15,22 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiJavascript,
-  SiHtml5,
-  SiCss3,
   SiRedux,
   SiPostman,
   SiVercel,
-  SiCplusplus,
-  SiC,
+  SiTensorflow,
+  SiPytorch,
 } from "react-icons/si";
-import { DiCode } from "react-icons/di"; // For DSA
+import { GiArtificialIntelligence } from "react-icons/gi";
 
 const Skills = () => {
-  const skills = [
-    // Frontend
-    { icon: <SiHtml5 size={50} className="text-orange-500" />, name: "HTML5" },
-    { icon: <SiCss3 size={50} className="text-blue-400" />, name: "CSS3" },
-    {
-      icon: <SiJavascript size={50} className="text-yellow-400" />,
-      name: "JavaScript",
-    },
-    {
-      icon: <SiTypescript size={50} className="text-blue-600" />,
-      name: "TypeScript",
-    },
-    { icon: <FaReact size={50} className="text-blue-500" />, name: "React" },
-    { icon: <SiRedux size={50} className="text-purple-500" />, name: "Redux" },
+  // Core Web Development Skills
+  const coreSkills = [
     {
       icon: <SiNextdotjs size={50} className="text-black dark:text-white" />,
       name: "Next.js",
     },
-    {
-      icon: <SiTailwindcss size={50} className="text-cyan-400" />,
-      name: "Tailwind CSS",
-    },
-
-    // Backend/Databases
-    {
-      icon: <FaNodeJs size={50} className="text-green-600" />,
-      name: "Node.js",
-    },
+    { icon: <FaReact size={50} className="text-blue-500" />, name: "React" },
     {
       icon: <SiExpress size={50} className="text-gray-500" />,
       name: "Express",
@@ -61,22 +39,59 @@ const Skills = () => {
       icon: <SiMongodb size={50} className="text-green-500" />,
       name: "MongoDB",
     },
+  ];
 
-    // Programming Languages
-    { icon: <SiC size={50} className="text-blue-700" />, name: "C" },
-    { icon: <SiCplusplus size={50} className="text-blue-600" />, name: "C++" },
+  // Programming Languages
+  const programmingLanguages = [
     { icon: <FaPython size={50} className="text-blue-300" />, name: "Python" },
+    { icon: <FaJava size={50} className="text-red-500" />, name: "Java" },
+    {
+      icon: <SiJavascript size={50} className="text-yellow-400" />,
+      name: "JavaScript",
+    },
+    {
+      icon: <SiTypescript size={50} className="text-blue-600" />,
+      name: "TypeScript",
+    },
+  ];
 
-    // DSA (General)
-    { icon: <DiCode size={50} className="text-gray-600" />, name: "DSA" },
+  // Machine Learning Algorithms
+  const mlAlgorithms = [
+    {
+      icon: <GiArtificialIntelligence size={50} className="text-purple-500" />,
+      name: "Neural Networks",
+    },
+    {
+      icon: <GiArtificialIntelligence size={50} className="text-green-500" />,
+      name: "SVM",
+    },
+    {
+      icon: <GiArtificialIntelligence size={50} className="text-blue-400" />,
+      name: "Naive Bayes",
+    },
+    {
+      icon: <GiArtificialIntelligence size={50} className="text-yellow-500" />,
+      name: "KNN",
+    },
+  ];
 
-    // Tools/Platforms
+  // Tools & Platforms
+  const tools = [
+    {
+      icon: <SiTailwindcss size={50} className="text-cyan-400" />,
+      name: "Tailwind CSS",
+    },
+    { icon: <SiRedux size={50} className="text-purple-500" />, name: "Redux" },
+    {
+      icon: <SiTensorflow size={50} className="text-orange-500" />,
+      name: "TensorFlow",
+    },
+    { icon: <SiPytorch size={50} className="text-red-500" />, name: "PyTorch" },
     { icon: <FaGitAlt size={50} className="text-orange-600" />, name: "Git" },
     {
       icon: <FaGithub size={50} className="text-black dark:text-white" />,
       name: "GitHub",
     },
-    { icon: <FaNpm size={50} className="text-red-500" />, name: "npm" },
     {
       icon: <SiPostman size={50} className="text-orange-500" />,
       name: "Postman",
@@ -88,37 +103,80 @@ const Skills = () => {
   ];
 
   return (
-    <div className="hero min-h-screen bg-base-200 pb-20 pt-20">
-      <div className="hero-content text-center flex-col">
-        <div className="max-w-md mb-12">
-          <h1
-            className="text-5xl font-bold text-white mb-4"
-            style={{
-              textShadow:
-                "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
-              letterSpacing: "0.1em",
-            }}
-          >
-            TECHNOLOGY I WORK WITH
-          </h1>
-          <div className="w-24 h-1 bg-success mx-auto"></div>
+    <div className="min-h-screen bg-base-200 py-20 px-4" id="skills">
+      <div className="text-center mb-16">
+        <h1
+          className="text-5xl font-bold text-white mb-4"
+          style={{
+            textShadow:
+              "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
+            letterSpacing: "0.1em",
+          }}
+        >
+          MY TECH STACK
+        </h1>
+        <div className="w-24 h-1 bg-success mx-auto"></div>
+      </div>
+
+      <div className="container mx-auto space-y-16">
+        {/* Core Web Development Skills */}
+        <div>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            Core Technologies
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {coreSkills.map((skill, index) => (
+              <SkillCard key={`core-${index}`} skill={skill} />
+            ))}
+          </div>
         </div>
 
-        {/* Responsive Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-20 px-4">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center p-6 bg-base-100 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-            >
-              <div>{skill.icon}</div>
-              <p className="mt-3 font-medium text-xl">{skill.name}</p>
-            </div>
-          ))}
+        {/* Programming Languages */}
+        <div>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            Programming Languages
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {programmingLanguages.map((skill, index) => (
+              <SkillCard key={`lang-${index}`} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* Machine Learning */}
+        <div>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            Machine Learning
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {mlAlgorithms.map((skill, index) => (
+              <SkillCard key={`ml-${index}`} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* Tools & Platforms */}
+        <div>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            Tools & Platforms
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {tools.map((skill, index) => (
+              <SkillCard key={`tool-${index}`} skill={skill} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+// Reusable Skill Card Component
+const SkillCard = ({ skill }) => (
+  <div className="flex flex-col items-center p-6 bg-base-100 rounded-xl border border-gray-700 hover:border-success hover:shadow-[0_0_15px_rgba(0,255,0,0.3)] transition-all duration-300">
+    <div className="mb-3">{skill.icon}</div>
+    <p className="font-medium text-xl text-white text-center">{skill.name}</p>
+  </div>
+);
 
 export default Skills;
