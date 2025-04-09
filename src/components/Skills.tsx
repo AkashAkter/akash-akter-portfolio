@@ -1,13 +1,6 @@
 "use client";
 import React from "react";
-import {
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaGithub,
-  FaPython,
-  FaJava,
-} from "react-icons/fa";
+import { FaReact, FaGitAlt, FaGithub, FaPython, FaJava } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiExpress,
@@ -22,6 +15,7 @@ import {
   SiPytorch,
 } from "react-icons/si";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import { JSX } from "react/jsx-dev-runtime";
 
 const Skills = () => {
   // Core Web Development Skills
@@ -172,7 +166,12 @@ const Skills = () => {
 };
 
 // Reusable Skill Card Component
-const SkillCard = ({ skill }) => (
+interface Skill {
+  icon: JSX.Element;
+  name: string;
+}
+
+const SkillCard = ({ skill }: { skill: Skill }) => (
   <div className="flex flex-col items-center p-6 bg-base-100 rounded-xl border border-gray-700 hover:border-success hover:shadow-[0_0_15px_rgba(0,255,0,0.3)] transition-all duration-300">
     <div className="mb-3">{skill.icon}</div>
     <p className="font-medium text-xl text-white text-center">{skill.name}</p>
