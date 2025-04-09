@@ -4,6 +4,7 @@
       "id": 1,
       "title": "Gym Trek",
       "description": "A full-stack e-commerce app for gym products with cart management, Stripe payments, and advanced filtering.",
+      "detailDescription": "I developed a feature-rich e-commerce website for workout equipment, incorporating checkout options such as Stripe, a dynamic cart system, and product listings. The platform includes an admin panel for real-time product management, allowing for easy addition, updating, and deletion of products. To enhance the user experience, I improved the search functionality with category and price filters, implemented debounced search for better performance, and updated the responsive design to ensure seamless use across all devices. Additionally, I added cart refresh warnings to prevent users from losing items during their shopping experience.",
       "features": [
         "API debouncing for search",
         "Cart management system",
@@ -36,6 +37,7 @@
       "id": 2,
       "title": "Auto Buzz",
       "description": "A marketplace for buying/selling used cars with Google Auth, appointments, and Stripe payments.",
+      "detailDescription": "I created a full-stack platform featuring separate dashboards for administrators, buyers, and sellers to facilitate the buying and selling of used automobiles. Administrators can manage users and listings, buyers can book automobiles, and sellers can add their products. The platform uses Stripe for secure payment processing, Google for user authentication, and Tailwind CSS to enhance the user interface with a responsive design for an optimal experience across devices.",
       "features": [
         "Seller/customer accounts",
         "Appointment booking",
@@ -66,6 +68,7 @@
       "id": 3,
       "title": "AutoLimpio",
       "description": "Car wash/service booking portal with admin controls, service comparisons, and countdown timers.",
+      "detailDescription": "The AutoLimpio car wash and service booking portal allows customers to easily schedule convenient time slots for vehicle care and explore a variety of car maintenance services. Users can select desired services, book appointments, and track future reservations effortlessly. Administrators have the ability to manage user roles, set available time slots for services, and efficiently handle all bookings. This guide will walk you through setting up and running the project locally on your machine.",
       "features": [
         "Debounced API calls",
         "Service comparison tool",

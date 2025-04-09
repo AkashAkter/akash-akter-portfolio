@@ -86,8 +86,9 @@ const ProjectDetails = () => {
               <h2 className="text-2xl font-semibold text-white mb-3 border-b border-success/50 pb-2">
                 Project Overview
               </h2>
+
               <p className="text-lg text-gray-300 leading-relaxed">
-                {project.description}
+                {project?.detailDescription}
               </p>
             </div>
 
