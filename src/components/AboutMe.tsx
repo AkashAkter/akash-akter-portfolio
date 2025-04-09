@@ -14,7 +14,7 @@ const AboutMe = () => {
             ABOUT ME
           </h1>
           <div className="w-24 h-1 bg-success mx-auto"></div>
-          <p className="py-6 text-white text-2xl">
+          <p className="py-6 text-white text-xl">
             A passionate full-stack developer skilled in{" "}
             <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
               React, Next.js, and Node.js

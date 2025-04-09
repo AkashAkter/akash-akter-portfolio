@@ -104,7 +104,7 @@ const ExperienceSection = () => {
                       {exp.company}
                     </h3>
                     <p className="text-gray-400 mb-4 text-lg">{exp.duration}</p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 text-[16px]">
                       {exp.description.map((item, index) => (
                         <li key={index} className="flex items-start">
                           <span className="text-success mr-2">✓</span>

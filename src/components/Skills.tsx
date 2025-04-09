@@ -105,14 +105,14 @@ const Skills = () => {
         </div>
 
         {/* Responsive Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-24 px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-20 px-4">
           {skills.map((skill, index) => (
             <div
               key={index}
               className="flex flex-col items-center p-6 bg-base-100 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div>{skill.icon}</div>
-              <p className="mt-3 font-medium">{skill.name}</p>
+              <p className="mt-3 font-medium text-xl">{skill.name}</p>
             </div>
           ))}
         </div>

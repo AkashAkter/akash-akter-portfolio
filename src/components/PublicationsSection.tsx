@@ -44,7 +44,7 @@ const PublicationsSection = () => {
 
             <div className="prose prose-invert max-w-none mb-6">
               <h3 className="text-xl text-success">Abstract</h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-[16px]">
                 In this research, we investigated vulnerabilities in Android
                 financial applications through permission analysis to enhance
                 user privacy and financial security. Our methodology involved
@@ -61,10 +61,10 @@ const PublicationsSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-base-300 p-4 rounded-lg">
-                <h4 className="text-success font-bold mb-2">
+                <h4 className="text-success font-bold mb-2 text-lg">
                   Key Contributions
                 </h4>
-                <ul className="list-disc pl-5 text-gray-300 space-y-1">
+                <ul className="list-disc pl-5 text-gray-300 space-y-1 text-[16px]">
                   <li>Novel permission-based analysis framework</li>
                   <li>Comparative evaluation of ML algorithms</li>
                   <li>Large-scale dataset creation (12,050 apps)</li>
@@ -72,10 +72,10 @@ const PublicationsSection = () => {
                 </ul>
               </div>
               <div className="bg-base-300 p-4 rounded-lg">
-                <h4 className="text-success font-bold mb-2">
+                <h4 className="text-success font-bold mb-2 text-lg">
                   Conference Details
                 </h4>
-                <ul className="text-gray-300 space-y-1">
+                <ul className="text-gray-300 space-y-1 text-[16px]">
                   <li>
                     <strong>Event:</strong> 3rd International Conference on
                     Advancement in Electrical and Electronic Engineering
