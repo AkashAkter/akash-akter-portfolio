@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaUser,
   FaCode,
   FaGraduationCap,
   FaBriefcase,
@@ -40,14 +39,6 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             {/* Navigation Links */}
             <nav className="hidden md:flex items-center space-x-6">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="flex items-center text-white hover:text-success transition-colors duration-300"
-              >
-                <FaUser className="mr-2" />
-                About
-              </button>
-
               <button
                 onClick={() => scrollToSection("skills")}
                 className="flex items-center text-white hover:text-success transition-colors duration-300"
