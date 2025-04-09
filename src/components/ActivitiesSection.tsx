@@ -5,11 +5,13 @@ import {
   FaUsers,
   FaCertificate,
   FaTrophy,
-  FaHeart,
   FaGlobe,
   FaBook,
   FaRunning,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
 } from "react-icons/fa";
+import { SiIeee } from "react-icons/si";
 
 const ActivitiesSection = () => {
   return (
@@ -42,6 +44,43 @@ const ActivitiesSection = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* IEEE Symposium Card - Enhanced with Event Details */}
+            <div className="card bg-base-200 border border-gray-700 hover:border-success transition-all group">
+              <div className="card-body">
+                <div className="flex items-start gap-4">
+                  <SiIeee className="text-[#00629B] text-2xl mt-1 group-hover:text-success transition-colors" />
+                  <div>
+                    <h3 className="card-title text-white flex items-center">
+                      IEEE Symposium Participant
+                      <span className="badge badge-success badge-sm ml-2">
+                        Invited
+                      </span>
+                    </h3>
+                    <p className="text-gray-400">
+                      IEEE Computer Society Bangladesh Chapter
+                    </p>
+
+                    <div className="mt-3 space-y-2">
+                      <div className="flex items-center text-gray-300 text-sm">
+                        <FaCalendarAlt className="mr-2 text-success" />
+                        <span>June 9-10, 2023</span>
+                      </div>
+                      <div className="flex items-center text-gray-300 text-sm">
+                        <FaMapMarkerAlt className="mr-2 text-success" />
+                        <span>Islamic University, Kushtia, Bangladesh</span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-300 mt-3 text-[16px]">
+                      Selected participant for prestigious national symposium on
+                      cutting-edge computer science research and applications
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Other cards remain the same */}
             <div className="card bg-base-200 border border-gray-700 hover:border-success transition-all">
               <div className="card-body">
                 <div className="flex items-start gap-4">
@@ -92,22 +131,6 @@ const ActivitiesSection = () => {
                     <p className="text-gray-300 mt-2 text-[16px]">
                       Certified participant in intensive web development
                       training program
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card bg-base-200 border border-gray-700 hover:border-success transition-all">
-              <div className="card-body">
-                <div className="flex items-start gap-4">
-                  <FaHeart className="text-success text-2xl mt-1" />
-                  <div>
-                    <h3 className="card-title text-white">Community Service</h3>
-                    <p className="text-gray-400">Local Charity Events</p>
-                    <p className="text-gray-300 mt-2 text-[16px]">
-                      Volunteered in fundraisers and community development
-                      initiatives
                     </p>
                   </div>
                 </div>
