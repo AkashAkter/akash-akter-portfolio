@@ -4,7 +4,6 @@ import ProjectSection from "@/components/ProjectSection";
 import Educations from "@/components/Educations";
 import Skills from "@/components/Skills";
 import Header from "@/components/Header";
-import CommentSection from "@/components/CommentSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import PublicationsSection from "@/components/PublicationsSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
@@ -49,9 +48,6 @@ const page = () => {
       <section id="activities">
         <ActivitiesSection />
       </section>
-
-      {/* 8. End with social proof */}
-      <CommentSection />
     </div>
   );
 };

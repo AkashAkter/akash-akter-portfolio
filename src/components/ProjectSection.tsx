@@ -5,87 +5,72 @@ import Link from "next/link";
 
 const ProjectSection = () => {
   return (
-    <div className="min-h-screen bg-base-200 py-16">
-      <div className="text-center mb-16">
-        <h1
-          className="text-5xl font-bold text-white mb-4"
-          style={{
-            textShadow:
-              "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ff00, 0 0 40px #00ff00",
-            letterSpacing: "0.1em",
-          }}
-        >
-          MY WORKS
+    <div
+      id="projects"
+      className=" bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-16 px-4"
+    >
+      {/* Section Heading */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">
+          MY PROJECTS
         </h1>
-        <div className="w-24 h-1 bg-success mx-auto"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
       </div>
 
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col gap-16">
-          {projectsData.projects.map((project) => (
-            <div
-              key={project.id}
-              className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-700"
-            >
-              <div className="flex flex-col lg:flex-row">
-                <div className="lg:w-1/2 p-6 aspect-video relative">
-                  {" "}
-                  {/* Added aspect-video */}
-                  <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg">
-                    <Image
-                      src={project.mainImage}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover hover:scale-105 transition-transform duration-500"
-                      quality={85}
-                      priority={project.id === 1}
-                    />
+      {/* Projects List */}
+      <div className="container mx-auto space-y-8">
+        {projectsData.projects.map((project) => (
+          <div
+            key={project.id}
+            className="bg-gray-800/50 rounded-xl border border-gray-700 hover:border-cyan-400 transition-all overflow-hidden p-10"
+          >
+            <div className="flex flex-col lg:flex-row">
+              {/* Project Image */}
+              <div className="lg:w-1/2 aspect-video relative ">
+                <Image
+                  src={project.mainImage}
+                  alt={project.title}
+                  fill
+                  quality={85}
+                  className="object-cover transition-transform duration-500 rounded-xl"
+                />
+              </div>
+
+              {/* Project Details */}
+              <div className="lg:w-1/2 p-6 flex flex-col">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    Technologies
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-sm rounded-full bg-gray-700 text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <div className="card-body lg:w-1/2 p-8">
-                  <h2 className="card-title text-4xl text-white mb-4 font-extrabold">
-                    {project.title}
-                  </h2>
-                  <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
 
-                  <div className="mb-8">
-                    <h3 className="text-2xl text-white font-bold mb-4">
-                      Technologies
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {project.technologies.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="badge badge-lg border-2 border-gray-600 text-white bg-transparent
-                          hover:bg-white hover:border-success hover:text-success 
-                          hover:shadow-[0_0_10px_#fff,0_0_20px_#fff,0_0_30px_#00ff00] 
-                          transition-all duration-300 cursor-default"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="card-actions justify-end">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      className="btn btn-success btn-lg text-white text-lg 
-  hover:bg-transparent hover:text-success hover:border-success
-  hover:shadow-[0_0_10px_#fff,0_0_20px_#fff,0_0_30px_#00ff00] 
-  transition-all duration-300"
-                    >
-                      View Details
-                    </Link>
-                  </div>
-                </div>
+                {/* View Details Button */}
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="mt-auto w-fit px-6 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 transition-all"
+                >
+                  View Details
+                </Link>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
