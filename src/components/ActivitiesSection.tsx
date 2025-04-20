@@ -58,7 +58,7 @@ const ActivitiesSection = () => {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-16 px-4"
+      className=" bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-16 px-4"
       id="activities"
     >
       <div className="text-center mb-16">
