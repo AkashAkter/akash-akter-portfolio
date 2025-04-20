@@ -1,99 +1,54 @@
 "use client";
 
-import Link from "next/link";
-import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import AboutMe from "@/components/AboutMe";
+import ActivitiesSection from "@/components/ActivitiesSection";
+import Educations from "@/components/Educations";
+import ExperienceSection from "@/components/ExperienceSection";
+import Header from "@/components/Header";
+import ProjectSection from "@/components/ProjectSection";
+import PublicationsSection from "@/components/PublicationsSection";
+import Skills from "@/components/Skills";
 
 export default function Home() {
-  const handleResumeDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/AkashAkter.pdf";
-    link.download = "AkashAkterResume.pdf";
-    link.click();
-  };
-
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: "url(/bg.jpg)",
-        }}
-      >
-        <div
-          className="hero-overlay"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
-        ></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-lg px-6">
-            <h1 className="mb-5 text-6xl font-bold text-white">
-              Hi! I&apos;m <br />
-              <span
-                className="text-success text-6xl"
-                style={{ textShadow: "0px 0px 20px #ffffff" }}
-              >
-                AKASH AKTER
-              </span>
-            </h1>
+      <Header />
+      <section id="home">{/* Hero section if you have one */}</section>
 
-            <p className="mb-5 text-3xl text-white">
-              As a{" "}
-              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
-                full-stack developer
-              </span>
-              , I design smooth digital experiences. I transform ideas into
-              reality by bridging the gap between{" "}
-              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
-                {" "}
-                back-end{" "}
-              </span>
-              logic and{" "}
-              <span style={{ textShadow: "0px 0px 20px #ffffff" }}>
-                {" "}
-                front-end{" "}
-              </span>{" "}
-              creativity.
-            </p>
-            <div className="flex justify-center gap-4 flex-wrap py-4">
-              <Link href="/About">
-                <button className="text-xl border px-4 py-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300">
-                  More About Myself
-                </button>
-              </Link>
-              <button
-                className="text-xl border px-2 text-white rounded hover:bg-white hover:border-success hover:text-success hover:shadow-[0_0_10px_#fff,_0_0_40px_#fff,_0_0_80px_#fff] transition-all duration-300"
-                onClick={handleResumeDownload}
-              >
-                Explore My Resume
-              </button>
-            </div>
+      {/* 1. Start with who you are */}
+      <section id="about">
+        <AboutMe />
+      </section>
 
-            <div className="mt-6 flex justify-center gap-4 text-white text-3xl">
-              <a
-                href="https://github.com/akashAkter/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="hover:text-success transition duration-300" />
-              </a>
-              <a
-                href="http://linkedin.com/in/akash08akter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin className="hover:text-success transition duration-300" />
-              </a>
+      {/* 2. Show what you can do */}
+      <section id="skills">
+        <Skills />
+      </section>
 
-              <a
-                href="https://www.facebook.com/akashh.akter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebook className="hover:text-success transition duration-300" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* 3. Demonstrate professional experience */}
+      <section id="experience">
+        <ExperienceSection />
+      </section>
+
+      {/* 4. Showcase tangible projects */}
+      <section id="projects">
+        <ProjectSection />
+      </section>
+
+      {/* 5. Highlight academic achievements */}
+      <section id="education">
+        <Educations />
+      </section>
+
+      {/* 6. Display research work */}
+      <section id="publications">
+        <PublicationsSection />
+      </section>
+
+      {/* 7. Show well-rounded personality */}
+      <section id="activities">
+        <ActivitiesSection />
+      </section>
     </div>
   );
 }

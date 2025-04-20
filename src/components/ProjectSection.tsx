@@ -22,7 +22,7 @@ const ProjectSection = () => {
         {projectsData.projects.map((project) => (
           <div
             key={project.id}
-            className="bg-gray-800/50 rounded-xl border border-gray-700 hover:border-cyan-400 transition-all overflow-hidden p-10"
+            className="bg-gray-800/50 rounded-xl border border-gray-700 hover:border-cyan-400 transition-all overflow-hidden md:p-10"
           >
             <div className="flex flex-col lg:flex-row">
               {/* Project Image */}

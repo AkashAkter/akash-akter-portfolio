@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaCode,
-  FaGraduationCap,
-  FaBriefcase,
-} from "react-icons/fa";
+import { FaCode, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 
 const navItems = [
   { id: "skills", icon: <FaCode className="mr-1.5" />, label: "Skills" },
@@ -23,24 +16,6 @@ const navItems = [
     id: "education",
     icon: <FaGraduationCap className="mr-1.5" />,
     label: "Education",
-  },
-];
-
-const socialLinks = [
-  {
-    href: "https://github.com/AkashAkter",
-    icon: <FaGithub size={18} />,
-    label: "GitHub",
-  },
-  {
-    href: "https://www.linkedin.com/in/akash08akter/",
-    icon: <FaLinkedin size={18} />,
-    label: "LinkedIn",
-  },
-  {
-    href: "mailto:your.akash.akter08@gmail.com",
-    icon: <FaEnvelope size={18} />,
-    label: "Email",
   },
 ];
 
@@ -80,21 +55,6 @@ const Header = () => {
                 </button>
               ))}
             </nav>
-
-            <div className="flex space-x-4 border-l border-slate-600 pl-4">
-              {socialLinks.map(({ href, icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-300 hover:text-cyan-400 hover:scale-110 transition-all duration-300"
-                  aria-label={label}
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,8 @@
 "use client";
 
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
 const AboutMe = () => {
   const handleResumeDownload = () => {
     const link = document.createElement("a");
@@ -16,7 +19,7 @@ const AboutMe = () => {
             ABOUT ME
           </h1>
 
-          <div className="w-32 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-8"></div>
+          <div className="w-32 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-8" />
 
           <p className="py-6 text-gray-300 text-xl leading-relaxed">
             A passionate full-stack developer skilled in{" "}
@@ -33,9 +36,39 @@ const AboutMe = () => {
             .
           </p>
 
+          {/* Social Icons */}
+          <div className="flex justify-center gap-6 mb-6 mt-4">
+            <a
+              href="https://github.com/AkashAkter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-cyan-400 transition-transform hover:scale-110"
+              aria-label="GitHub"
+            >
+              <FaGithub size={26} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/akash08akter/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-cyan-400 transition-transform hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={26} />
+            </a>
+            <a
+              href="mailto:your.akash.akter08@gmail.com"
+              className="text-gray-300 hover:text-cyan-400 transition-transform hover:scale-110"
+              aria-label="Email"
+            >
+              <FaEnvelope size={26} />
+            </a>
+          </div>
+
+          {/* Resume Button */}
           <button
             onClick={handleResumeDownload}
-            className="mt-6 px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50"
+            className="mt-2 px-8 py-3 text-lg font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50"
           >
             Download Resume
           </button>
