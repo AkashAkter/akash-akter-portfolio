@@ -62,7 +62,7 @@ const ActivitiesSection = () => {
       id="activities"
     >
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
+        <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
           ACTIVITIES & INTERESTS
         </h1>
         <div className="w-24 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>

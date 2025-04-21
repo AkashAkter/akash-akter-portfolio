@@ -15,7 +15,7 @@ const AboutMe = () => {
     <div className="hero min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
       <div className="hero-content text-center">
         <div className="max-w-2xl">
-          <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_2px_4px_rgba(34,211,238,0.3)]">
+          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
             ABOUT ME
           </h1>
 

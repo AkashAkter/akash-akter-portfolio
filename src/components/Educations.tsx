@@ -3,20 +3,12 @@ import Image from "next/image";
 const Educations = () => {
   return (
     <div className="py-20 bg-gradient-to-br from-[#0f172a] to-[#1e293b]">
-      <h1
-        className="text-5xl font-bold text-center mb-4"
-        style={{
-          textShadow:
-            "0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)",
-          letterSpacing: "0.1em",
-          background: "linear-gradient(to right, #38bdf8, #22d3ee)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        EDUCATION HISTORY
-      </h1>
-      <div className="w-24 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
+          EDUCATION
+        </h1>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
+      </div>
 
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical px-4 md:px-8 lg:px-12">
         <li>
