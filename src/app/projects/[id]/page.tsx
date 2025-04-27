@@ -32,7 +32,7 @@ const ProjectDetails = () => {
         {/* Back Button */}
         <button
           onClick={() => router.back()}
-          className="mb-8 flex items-center gap-2 text-cyan-400 hover:text-white transition-colors"
+          className="group mb-8 flex items-center gap-2 text-cyan-400 hover:text-white transition-colors"
         >
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           <span className="text-lg">Back to Projects</span>
@@ -110,13 +110,13 @@ const ProjectDetails = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 justify-end mt-6">
+            <div className="flex flex-col md:flex-row flex-wrap gap-4 justify-center md:justify-end mt-6">
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn bg-cyan-500 text-white hover:bg-transparent hover:text-cyan-400 border border-cyan-500 transition"
+                  className="w-full md:w-auto btn bg-cyan-500 text-white hover:bg-transparent hover:text-cyan-400 border border-cyan-500 transition text-center"
                 >
                   <FaExternalLinkAlt className="mr-2" />
                   Live Demo
@@ -126,7 +126,7 @@ const ProjectDetails = () => {
                 href={project.clientRepo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-white"
+                className="w-full md:w-auto btn btn-outline border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-white text-center"
               >
                 <FaGithub className="mr-2" />
                 Client Code
@@ -136,7 +136,7 @@ const ProjectDetails = () => {
                   href={project.serverRepo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-white"
+                  className="w-full md:w-auto btn btn-outline border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-white text-center"
                 >
                   <FaServer className="mr-2" />
                   Server Code
