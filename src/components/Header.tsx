@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaCode, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const navItems = [
   { id: "skills", icon: <FaCode className="mr-1.5" />, label: "Skills" },
@@ -31,11 +32,22 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/">
-            <button onClick={() => scrollToSection("home")} className="group">
-              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 drop-shadow-md transition-all duration-500 group-hover:brightness-110">
+            <motion.button
+              onClick={() => scrollToSection("home")}
+              className="group relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-20 blur-md transition-all duration-500" />
+              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 drop-shadow-lg">
                 Akash Akter
               </h1>
-            </button>
+              <motion.span
+                className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.button>
           </Link>
 
           {/* Navigation & Socials */}

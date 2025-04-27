@@ -12,6 +12,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import { SiIeee } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const ActivitiesSection = () => {
   const extraCurriculars = [
@@ -49,11 +50,31 @@ const ActivitiesSection = () => {
   ];
 
   const interests = [
-    { icon: <FaLaptopCode size={22} />, text: "Tech Exploration" },
-    { icon: <FaBook size={22} />, text: "Self-Improvement" },
-    { icon: <FaTrophy size={22} />, text: "Competitive Programming" },
-    { icon: <FaGlobe size={22} />, text: "Cultural Travel" },
-    { icon: <FaRunning size={22} />, text: "Team Sports" },
+    {
+      icon: <FaLaptopCode size={22} />,
+      text: "Tech Exploration",
+      color: "bg-cyan-500",
+    },
+    {
+      icon: <FaBook size={22} />,
+      text: "Self-Improvement",
+      color: "bg-blue-500",
+    },
+    {
+      icon: <FaTrophy size={22} />,
+      text: "Competitive Programming",
+      color: "bg-purple-500",
+    },
+    {
+      icon: <FaGlobe size={22} />,
+      text: "Cultural Travel",
+      color: "bg-emerald-500",
+    },
+    {
+      icon: <FaRunning size={22} />,
+      text: "Team Sports",
+      color: "bg-amber-500",
+    },
   ];
 
   return (
@@ -117,25 +138,46 @@ const ActivitiesSection = () => {
         </div>
 
         {/* Hobbies & Interests Section */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl font-bold text-white mb-8 flex items-center">
-            <FaGlobe className="text-cyan-400 mr-3" />
+            <span className="mr-3 p-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600">
+              <FaGlobe className="text-white" />
+            </span>
             Hobbies & Interests
           </h2>
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {interests.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex flex-col items-center p-5 bg-gray-800/40 border border-gray-700 rounded-xl hover:border-cyan-400 transition-all group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative group"
               >
-                <div className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform">
-                  {item.icon}
+                <div
+                  className={`absolute inset-0 rounded-xl ${item.color} opacity-0 group-hover:opacity-100 blur-md transition-all duration-300`}
+                ></div>
+                <div className="relative flex flex-col items-center p-6 bg-gray-800/70 border border-gray-700 rounded-xl group-hover:border-transparent transition-all">
+                  <div
+                    className={`p-3 rounded-full ${item.color}/10 text-white mb-3 group-hover:${item.color} transition-colors`}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3 className="text-white text-center text-sm font-medium">
+                    {item.text}
+                  </h3>
                 </div>
-                <h3 className="text-white text-center text-sm">{item.text}</h3>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
