@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <section id="home">{/* Hero section if you have one */}</section>
 
       {/* 1. Start with who you are */}
       <section id="about">
