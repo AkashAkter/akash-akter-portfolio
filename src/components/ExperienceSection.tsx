@@ -7,7 +7,7 @@ const ExperienceSection = () => {
     {
       role: "Jr. Web Developer",
       company: "BDcalling",
-      duration: "Feb 2024 - Present",
+      duration: "Feb 2025 - Present",
       points: [
         "Developing full-stack applications using React.js, Next.js, and Node.js",
         "Building Shopify CMS solutions for e-commerce clients",
