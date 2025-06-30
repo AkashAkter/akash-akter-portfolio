@@ -1,6 +1,7 @@
 "use client";
-
 import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -50,62 +51,110 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div
-      className=" bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-16 px-4"
-      id="experience"
-    >
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
-          WORK EXPERIENCE
-        </h1>
-        <div className="w-24 h-1 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-        <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
-          My professional journey from internship to junior developer
-        </p>
-      </div>
-
-      <div className="container mx-auto max-w-4xl space-y-8">
-        {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-xl bg-gray-800/50 border ${
-              exp.current ? "border-cyan-400" : "border-gray-700"
-            } hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all`}
-          >
-            <div className="flex flex-col md:flex-row gap-6">
-              <img
-                src={exp.logo}
-                alt={exp.company}
-                className="w-20 h-20 object-contain bg-gray-700 p-2 rounded-lg self-start"
+    <section id="experience" className="bg-[#F9F7F7] pt-32 -mt-24 pb-20 px-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Header with consistent animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold text-[#112D4E] mb-4">
+            <span className="relative inline-block">
+              WORK EXPERIENCE
+              <motion.span
+                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#3F72AF] to-[#112D4E]"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
               />
+            </span>
+          </h1>
+          <p className="text-[#3F72AF] text-center text-sm md:text-base font-medium">
+            My professional journey from internship to junior developer
+          </p>
+        </motion.div>
 
-              <div>
-                <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2">
-                  <h2 className="text-2xl font-bold text-white">{exp.role}</h2>
-                  {exp.current && (
-                    <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm">
-                      Current
-                    </span>
-                  )}
+        {/* Experience Timeline */}
+        <div className="space-y-8 relative">
+          {/* Timeline line */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#DBE2EF] -z-10"></div>
+
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative pl-12 md:pl-0 ${
+                index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
+              }`}
+            >
+              {/* Timeline dot */}
+              <div
+                className={`absolute left-0 md:left-1/2 top-6 w-4 h-4 rounded-full border-4 border-[#3F72AF] bg-white -ml-2 ${
+                  exp.current ? "animate-pulse" : ""
+                }`}
+              ></div>
+
+              {/* Experience card */}
+              <div
+                className={`bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-[#DBE2EF] shadow-sm hover:shadow-md transition-all ${
+                  exp.current ? "border-[#3F72AF]" : ""
+                }`}
+              >
+                <div
+                  className={`flex flex-col ${
+                    index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+                  } gap-6`}
+                >
+                  <div className="w-20 h-20 min-w-[80px] rounded-lg bg-white p-2 border border-[#DBE2EF] shadow-sm">
+                    <Image
+                      src={exp.logo}
+                      alt={exp.company}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-between">
+                      <h2 className="text-xl font-bold text-[#112D4E]">
+                        {exp.role}
+                      </h2>
+                      {exp.current && (
+                        <span className="px-3 py-1 bg-[#3F72AF]/20 text-[#3F72AF] rounded-full text-sm font-medium">
+                          Current
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-lg text-[#3F72AF] font-medium">
+                      {exp.company}
+                    </h3>
+                    <p className="text-[#112D4E]/80 mb-4 text-sm">
+                      {exp.duration}
+                    </p>
+                    <ul className="space-y-2">
+                      {exp.points.map((point, i) => (
+                        <li key={i} className="flex items-start text-[#112D4E]">
+                          <span className="text-[#3F72AF] mr-2 mt-1">•</span>
+                          <span className="text-sm md:text-base">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className="text-xl text-cyan-400 font-medium">
-                  {exp.company}
-                </h3>
-                <p className="text-gray-400 mb-4">{exp.duration}</p>
-                <ul className="space-y-2">
-                  {exp.points.map((point, i) => (
-                    <li key={i} className="flex items-start text-gray-300">
-                      <span className="text-cyan-400 mr-2 mt-1">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
