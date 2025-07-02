@@ -17,7 +17,7 @@ const ExperienceSection = () => {
         "Creating RESTful APIs and integrating services",
         "Optimizing web performance and SEO",
       ],
-      logo: "https://bdcalling.com/wp-content/themes/bdcalling/assets/images/logo-sm.svg",
+      logo: "/bdcalling.jpg",
       current: true,
     },
     {
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
         "Increased customer satisfaction scores",
         "Collaborated on inventory decisions",
       ],
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQFangXvhi3clQ/company-logo_200_200/company-logo_200_200/0/1630641239879/brac_aarong_logo?e=1749686400&v=beta&t=7fVB6jY1ocVcsRtIfAg4oAQRuJ46Wf3VrYk6ST-jgSM",
+      logo: "/aarong.png",
     },
     {
       role: "Web Development Intern",
@@ -46,7 +46,7 @@ const ExperienceSection = () => {
         "Collaborated using Git version control",
         "Debugged and optimized codebases",
       ],
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQH8jG3qpU-bGg/company-logo_200_200/company-logo_200_200/0/1630650684502/code_studio4_logo?e=1756944000&v=beta&t=-y5UuYg3QQRti6MyRWizmA1bj4NmEs5zIzg3xlHffys",
+      logo: "/code-studio.png",
     },
   ];
 
