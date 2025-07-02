@@ -33,9 +33,7 @@ const Skills = () => {
           color: "hover:shadow-[0_0_15px_rgba(97,218,251,0.3)]",
         },
         {
-          icon: (
-            <SiExpress size={28} className="text-gray-800 dark:text-gray-200" />
-          ),
+          icon: <SiExpress size={28} className="text-black dark:text-white" />,
           name: "Express",
           color: "hover:shadow-[0_0_15px_rgba(104,104,104,0.2)]",
         },
