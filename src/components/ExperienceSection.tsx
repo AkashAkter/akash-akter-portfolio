@@ -17,7 +17,7 @@ const ExperienceSection = () => {
         "Creating RESTful APIs and integrating services",
         "Optimizing web performance and SEO",
       ],
-      logo: "https://media.licdn.com/dms/image/v2/D560BAQH74yKCkI-0ug/company-logo_200_200/company-logo_200_200/0/1709979739907/bdcallingitltd_logo?e=1749686400&v=beta&t=krEkSrhKcnhUb-p2wxpvKIu3WwgegotylA9PywmCGeo",
+      logo: "https://bdcalling.com/wp-content/themes/bdcalling/assets/images/logo-sm.svg",
       current: true,
     },
     {
@@ -46,7 +46,7 @@ const ExperienceSection = () => {
         "Collaborated using Git version control",
         "Debugged and optimized codebases",
       ],
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQH8jG3qpU-bGg/company-logo_200_200/company-logo_200_200/0/1630650684502/code_studio4_logo?e=1749686400&v=beta&t=xOG7YI-6fyZRprMd3jOOpmWcpE_30NOQi_lxVVkawXo",
+      logo: "https://media.licdn.com/dms/image/v2/C560BAQH8jG3qpU-bGg/company-logo_200_200/company-logo_200_200/0/1630650684502/code_studio4_logo?e=1756944000&v=beta&t=-y5UuYg3QQRti6MyRWizmA1bj4NmEs5zIzg3xlHffys",
     },
   ];
 
