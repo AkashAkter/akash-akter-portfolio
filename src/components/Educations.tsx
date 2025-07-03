@@ -63,11 +63,19 @@ const Educations = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#112D4E] mb-4 relative inline-block">
-            <span className="relative z-10">Academic Journey</span>
-            <span className="absolute bottom-0 left-0 w-full h-3 bg-[#DBE2EF] z-0"></span>
-          </h2>
-          <p className="text-lg text-[#3F72AF] max-w-2xl mx-auto mt-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#112D4E] mb-4">
+            <span className="relative inline-block">
+              Academic Journey
+              <motion.span
+                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#3F72AF] to-[#112D4E]"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              />
+            </span>
+          </h1>
+          <p className="text-[#3F72AF] text-center text-sm md:text-base font-medium">
             My educational background and achievements
           </p>
         </motion.div>
