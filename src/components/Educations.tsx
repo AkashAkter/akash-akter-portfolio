@@ -16,9 +16,8 @@ const Educations = () => {
           value: "Classification of Malicious Financial Applications",
         },
       ],
-      icon: <FaGraduationCap className="text-lg" />,
-      colorClass: "border-blue-600 text-blue-600",
-      bgClass: "bg-blue-50",
+      icon: <FaGraduationCap />,
+      colorClass: "border-[#3F72AF] text-[#3F72AF]",
     },
     {
       id: 2,
@@ -29,9 +28,8 @@ const Educations = () => {
         { label: "GPA", value: "3.92/5.00", highlight: true },
         { label: "Group", value: "Science", highlight: true },
       ],
-      icon: <FaSchool className="text-lg" />,
-      colorClass: "border-emerald-600 text-emerald-600",
-      bgClass: "bg-emerald-50",
+      icon: <FaSchool />,
+      colorClass: "border-[#3F72AF] text-[#3F72AF]",
     },
     {
       id: 3,
@@ -42,15 +40,19 @@ const Educations = () => {
         { label: "GPA", value: "5.00/5.00", highlight: true },
         { label: "Group", value: "Science", highlight: true },
       ],
-      icon: <FaAward className="text-lg" />,
-      colorClass: "border-amber-600 text-amber-600",
-      bgClass: "bg-amber-50",
+      icon: <FaAward />,
+      colorClass: "border-[#3F72AF] text-[#3F72AF]",
     },
   ];
 
   return (
-    <section id="education" className="relative py-20 px-4 sm:px-6 bg-gray-50">
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section
+      id="education"
+      className="relative py-24 px-6 bg-[#F9F7F7] overflow-hidden"
+    >
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#112D4E] to-transparent opacity-5"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#3F72AF] opacity-5 blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
@@ -58,100 +60,83 @@ const Educations = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            <span className="relative inline-block">
-              Education
-              <motion.span
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-700"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              />
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#112D4E] mb-4 relative inline-block">
+            <span className="relative z-10">Academic Journey</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-[#DBE2EF] z-0"></span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            My academic journey and the foundation of my technical expertise
+          <p className="text-lg text-[#3F72AF] max-w-2xl mx-auto mt-4">
+            My educational background and achievements
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 -z-10"></div>
-
+        {/* Unique Timeline Layout */}
+        <div className="grid gap-12 md:grid-cols-3 md:gap-8">
           {educationData.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative pl-12 md:pl-0 mb-12 ${
-                index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
-              }`}
+              className="relative group"
             >
-              {/* Timeline dot */}
+              {/* Card */}
               <div
-                className={`absolute left-0 md:left-1/2 top-6 w-8 h-8 rounded-full border-4 ${item.colorClass} ${item.bgClass} flex items-center justify-center -ml-4 z-10`}
+                className={`h-full p-6 rounded-2xl border-2 ${item.colorClass} bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
               >
-                <div className="flex items-center justify-center">
-                  {item.icon}
-                </div>
-              </div>
-
-              {/* Education card */}
-              <div
-                className={`relative p-6 rounded-xl ${item.bgClass} border ${item.colorClass} shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden`}
-              >
-                {/* Decorative elements */}
+                {/* Icon with background */}
                 <div
-                  className={`absolute top-0 left-0 w-1 h-full ${item.colorClass.replace(
-                    "border-",
-                    "bg-"
-                  )}`}
-                ></div>
-                <div className="absolute top-0 right-0 w-20 h-20 opacity-10">
+                  className={`absolute -top-6 left-6 w-12 h-12 rounded-full ${item.colorClass} bg-white border-2 flex items-center justify-center text-xl`}
+                >
                   {item.icon}
                 </div>
 
-                <div className="relative">
-                  <span
-                    className={`text-sm font-semibold ${item.colorClass} mb-2 inline-block`}
-                  >
-                    {item.year}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {item.degree}
-                  </h3>
-                  <p className="text-gray-700 mb-4">{item.institution}</p>
+                {/* Year */}
+                <div className="text-sm font-medium text-[#3F72AF] mb-2">
+                  {item.year}
+                </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {item.details.map((detail, i) => (
+                {/* Degree */}
+                <h3 className="text-xl font-bold text-[#112D4E] mb-3 leading-tight">
+                  {item.degree}
+                </h3>
+
+                {/* Institution */}
+                <p className="text-[#112D4E]/90 mb-5 border-l-2 border-[#3F72AF] pl-3 py-1 italic">
+                  {item.institution}
+                </p>
+
+                {/* Details */}
+                <div className="space-y-2">
+                  {item.details.map((detail, i) => (
+                    <div key={i} className="flex items-start">
                       <span
-                        key={i}
-                        className={`px-3 py-1 text-xs rounded-full ${
-                          detail.highlight
-                            ? `${item.bgClass.replace(
-                                "bg-",
-                                "bg-opacity-70 "
-                              )} ${item.colorClass} border`
-                            : "bg-white text-gray-700 border border-gray-200"
+                        className={`inline-block w-2 h-2 rounded-full mt-2 mr-2 ${
+                          detail.highlight ? "bg-[#3F72AF]" : "bg-[#DBE2EF]"
                         }`}
-                      >
-                        {detail.label}:{" "}
-                        <span className="font-semibold">{detail.value}</span>
+                      ></span>
+                      <span className="text-sm text-[#112D4E]">
+                        <span className="font-medium">{detail.label}:</span>{" "}
+                        {detail.value}
                       </span>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* Connector (visible on desktop) */}
+              {index < educationData.length - 1 && (
+                <div className="hidden md:block absolute top-1/2 right-0 w-8 h-1 bg-[#DBE2EF] transform translate-x-full -translate-y-1/2"></div>
+              )}
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom decorative line */}
+        <div className="mt-20 h-px bg-gradient-to-r from-transparent via-[#3F72AF] to-transparent"></div>
       </div>
     </section>
   );
