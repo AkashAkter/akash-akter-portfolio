@@ -7,7 +7,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       role: "Jr. Web Developer",
-      company: "BDcalling",
+      company: "Betopia Group",
       duration: "Feb 2025 - Present",
       points: [
         "Developing full-stack applications using React.js, Next.js, and Node.js",
@@ -17,7 +17,7 @@ const ExperienceSection = () => {
         "Creating RESTful APIs and integrating services",
         "Optimizing web performance and SEO",
       ],
-      logo: "/bdcalling.jpg",
+      logo: "/betopia.jpeg",
       current: true,
     },
     {
