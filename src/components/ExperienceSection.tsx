@@ -7,7 +7,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       role: "Jr. Web Developer",
-      company: "Betopia",
+      company: "Betopia Group",
       duration: "Feb 2025 - Present",
       points: [
         "Developing full-stack applications using React.js, Next.js, and Node.js",
