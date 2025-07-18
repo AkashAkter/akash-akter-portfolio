@@ -6,7 +6,7 @@ import Image from "next/image";
 const ExperienceSection = () => {
   const experiences = [
     {
-      role: "Jr. Web Developer",
+      role: "Web Developer",
       company: "Betopia Group",
       duration: "Feb 2025 - Present",
       points: [
