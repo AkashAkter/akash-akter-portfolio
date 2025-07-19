@@ -21,10 +21,8 @@ const Skills = () => {
       title: "Core Technologies",
       skills: [
         {
-          // Changed: Icon color to a softer slate for better theme integration
           icon: <SiNextdotjs size={28} className="text-slate-800" />,
           name: "Next.js",
-          // Kept: Unique brand-colored shadow for a personalized touch
           color: "hover:shadow-[0_0_15px_rgba(0,0,0,0.2)]",
         },
         {
@@ -33,7 +31,6 @@ const Skills = () => {
           color: "hover:shadow-[0_0_15px_rgba(97,218,251,0.3)]",
         },
         {
-          // Changed: Icon color to a softer slate
           icon: <SiExpress size={28} className="text-slate-800" />,
           name: "Express",
           color: "hover:shadow-[0_0_15px_rgba(104,104,104,0.2)]",
@@ -118,7 +115,6 @@ const Skills = () => {
           color: "hover:shadow-[0_0_15px_rgba(240,80,50,0.3)]",
         },
         {
-          // Changed: Icon color to a softer slate
           icon: <FaGithub size={28} className="text-slate-800" />,
           name: "GitHub",
           color: "hover:shadow-[0_0_15px_rgba(0,0,0,0.2)]",
@@ -128,22 +124,23 @@ const Skills = () => {
   ];
 
   return (
-    // Changed: Corrected spacing for better layout flow and updated background color.
-    <section id="skills" className="bg-slate-50 py-24 md:py-32">
-      <div className="container max-w-6xl mx-auto px-6">
-        {/* Header with updated colors */}
+    <section
+      id="skills"
+      className="bg-slate-50 py-20 sm:py-24 md:py-32 px-4 sm:px-6"
+    >
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 sm:mb-4">
             <span className="relative inline-block">
               MY TECH STACK
               <motion.span
-                // Changed: Gradient to match new palette
                 className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -152,13 +149,13 @@ const Skills = () => {
               />
             </span>
           </h1>
-          <p className="text-teal-600 text-center text-sm md:text-base font-medium">
+          <p className="text-teal-600 text-sm sm:text-base font-medium">
             Technologies I work with daily
           </p>
         </motion.div>
 
-        {/* Skills Grid with enhanced card design */}
-        <div className="space-y-12 md:space-y-16">
+        {/* Skills Grid */}
+        <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
@@ -166,33 +163,30 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.3 }}
-              // Changed: Category card background and border for consistency
-              className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm"
+              className="bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm"
             >
-              <h2 className="text-2xl font-semibold text-slate-800 mb-8 text-center">
+              <h2 className="text-xl sm:text-2xl font-semibold text-slate-800 mb-6 sm:mb-8 text-center">
                 {category.title}
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                 {category.skills.map((skill, idx) => (
                   <motion.div
                     key={idx}
                     whileHover={{ y: -5, scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    // Changed: Refined individual skill card for a cleaner hover effect
                     className={`
-                      flex flex-col items-center justify-center p-5 rounded-lg
+                      flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 rounded-lg
                       bg-slate-50 border border-slate-200
                       transition-all duration-300 group
                       hover:border-teal-300 hover:shadow-lg
                       ${skill.color}
                     `}
                   >
-                    <div className="mb-3 transition-transform duration-300 group-hover:scale-110">
+                    <div className="mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
                       {skill.icon}
                     </div>
-                    {/* Changed: Text colors for better readability and hover effect */}
-                    <p className="font-medium text-slate-700 transition-colors group-hover:text-teal-600">
+                    <p className="text-sm sm:text-base font-medium text-slate-700 transition-colors group-hover:text-teal-600">
                       {skill.name}
                     </p>
                   </motion.div>
