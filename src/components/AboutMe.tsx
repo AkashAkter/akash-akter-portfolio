@@ -39,8 +39,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      // Changed: Section background to light slate
-      className="min-h-screen bg-slate-50 px-6 pt-36 md:pt-44 pb-20"
+      className="min-h-screen bg-slate-50 px-4 sm:px-6 pt-28 md:pt-36 lg:pt-44 pb-16 md:pb-24"
     >
       <div className="max-w-4xl mx-auto">
         {/* Header with refined animation */}
@@ -49,14 +48,12 @@ const AboutMe = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="mb-14 md:mb-20"
+          className="mb-12 md:mb-16 lg:mb-20"
         >
-          {/* Changed: Heading color to dark slate */}
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">
             <span className="relative inline-block">
               ABOUT ME
               <motion.span
-                // Changed: Underline gradient to match new palette
                 className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -65,34 +62,30 @@ const AboutMe = () => {
               />
             </span>
           </h1>
-          {/* Changed: Subtitle color to accent teal */}
-          <p className="text-teal-600 text-center text-sm md:text-base font-medium">
+          <p className="text-teal-600 text-center text-sm sm:text-base font-medium">
             Full-Stack Developer | Problem Solver | Tech Enthusiast
           </p>
         </motion.div>
 
         {/* Content with improved spacing */}
-        <div className="grid gap-10 md:gap-12">
+        <div className="grid gap-8 md:gap-10 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            // Changed: Card background to white, border to light slate
-            className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm"
+            className="bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm"
           >
-            {/* Changed: Body text color to a softer slate for readability */}
-            <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6">
-              I'm a passionate {/* Changed: Highlight color to accent teal */}
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed sm:leading-relaxed mb-4 sm:mb-6">
+              I'm a passionate{" "}
               <span className="font-semibold text-teal-600">
                 full-stack developer
               </span>{" "}
-              with expertise in {/* Changed: Text color to dark slate */}
+              with expertise in{" "}
               <span className="font-medium text-slate-800">
                 React, Next.js, and Node.js
               </span>
               . I specialize in building{" "}
-              {/* Changed: Highlight effect to use accent color */}
               <span className="relative inline-block">
                 <span className="relative z-10">
                   scalable, performant web applications
@@ -102,12 +95,11 @@ const AboutMe = () => {
               with intuitive user experiences.
             </p>
 
-            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed sm:leading-relaxed">
               When I'm not coding, you'll find me solving challenges on{" "}
-              {/* Changed: Highlight color to accent teal */}
               <span className="font-medium text-teal-600">LeetCode</span>,
               exploring new technologies, or contributing to open-source
-              projects. I believe in {/* Changed: Text color to dark slate */}
+              projects. I believe in{" "}
               <span className="font-semibold text-slate-800">
                 continuous learning
               </span>{" "}
@@ -121,10 +113,10 @@ const AboutMe = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center gap-8 pt-4" // Added top padding for better spacing
+            className="flex flex-col items-center gap-6 sm:gap-8 pt-2 sm:pt-4"
           >
             {/* Social Icons with refined hover effects */}
-            <div className="flex gap-5">
+            <div className="flex gap-4 sm:gap-5">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
@@ -132,8 +124,7 @@ const AboutMe = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  // Changed: Icon colors to match new palette
-                  className="relative p-3 rounded-full text-slate-600 hover:text-teal-500 transition-colors"
+                  className="relative p-2.5 sm:p-3 rounded-full text-slate-600 hover:text-teal-500 transition-colors"
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 10 }}
@@ -141,7 +132,6 @@ const AboutMe = () => {
                   transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {/* Changed: Background and shadow glows to accent teal */}
                   <div className="absolute inset-0 rounded-full bg-teal-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10" />
                   <div className="absolute inset-0 rounded-full shadow-[0_0_10px_-2px_rgba(20,184,166,0.4)] opacity-0 hover:opacity-100 transition-opacity duration-500" />
                   {link.icon}
@@ -152,18 +142,16 @@ const AboutMe = () => {
             {/* Resume Button with enhanced animation */}
             <motion.button
               onClick={handleResumeDownload}
-              // Changed: Gradient to match new palette and refined hover shadow
-              className="relative px-8 py-3.5 text-base font-medium rounded-full bg-gradient-to-r from-slate-800 to-teal-500 text-white hover:shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group overflow-hidden"
+              className="relative px-6 sm:px-8 py-2.5 sm:py-3.5 text-sm sm:text-base font-medium rounded-full bg-gradient-to-r from-slate-800 to-teal-500 text-white hover:shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group overflow-hidden"
               whileTap={{ scale: 0.98 }}
               initial="rest"
               whileHover="hover"
               animate="rest"
             >
-              <div className="flex items-center gap-2.5 relative z-10">
-                <FaFileDownload />
+              <div className="flex items-center gap-2 sm:gap-2.5 relative z-10">
+                <FaFileDownload className="text-sm sm:text-base" />
                 <span>Download Resume</span>
               </div>
-              {/* Improved: Cleaned up hover animation using variants */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 -z-0"
                 variants={{
