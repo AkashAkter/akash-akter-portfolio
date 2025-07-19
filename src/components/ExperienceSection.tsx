@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { HiCheckCircle } from "react-icons/hi"; // Added for stylish list points
 
 const ExperienceSection = () => {
   const experiences = [
@@ -51,107 +52,130 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="bg-[#F9F7F7] pt-32 -mt-24 pb-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Header with consistent animation */}
+    // Changed: Corrected spacing and updated background color
+    <section id="experience" className="bg-slate-50 py-24 md:py-32">
+      <div className="container max-w-4xl mx-auto px-6">
+        {/* Header with updated colors */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16"
+          className="text-center mb-16 md:mb-20"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#112D4E] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
             <span className="relative inline-block">
               WORK EXPERIENCE
               <motion.span
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#3F72AF] to-[#112D4E]"
+                // Changed: Gradient to match new palette
+                className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
                 viewport={{ once: true }}
               />
             </span>
           </h1>
-          <p className="text-[#3F72AF] text-center text-sm md:text-base font-medium">
-            My professional journey from internship to junior developer
+          <p className="text-teal-600 text-center text-sm md:text-base font-medium">
+            My professional journey and accomplishments
           </p>
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="space-y-8 relative">
+        <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#DBE2EF] -z-10"></div>
+          <div className="absolute left-3 md:left-1/2 top-0 h-full w-0.5 bg-slate-200" />
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative pl-12 md:pl-0 ${
-                index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
-              }`}
-            >
-              {/* Timeline dot */}
-              <div
-                className={`absolute left-0 md:left-1/2 top-6 w-4 h-4 rounded-full border-4 border-[#3F72AF] bg-white -ml-2 ${
-                  exp.current ? "animate-pulse" : ""
-                }`}
-              ></div>
-
-              {/* Experience card */}
-              <div
-                className={`bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-[#DBE2EF] shadow-sm hover:shadow-md transition-all ${
-                  exp.current ? "border-[#3F72AF]" : ""
-                }`}
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true, amount: 0.5 }}
+                className={`relative pl-10 md:pl-0`}
               >
+                {/* Timeline Dot */}
                 <div
-                  className={`flex flex-col ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-                  } gap-6`}
+                  className={`absolute left-0 md:left-1/2 top-4 w-6 h-6 flex items-center justify-center -translate-x-1/2`}
                 >
-                  <div className="w-20 h-20 min-w-[80px] rounded-lg bg-white p-2 border border-[#DBE2EF] shadow-sm">
-                    <Image
-                      src={exp.logo}
-                      alt={exp.company}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+                  <div
+                    // Changed: Enhanced dot design for current job
+                    className={`h-4 w-4 rounded-full border-4 ${
+                      exp.current
+                        ? "border-teal-500 bg-teal-500 animate-pulse"
+                        : "border-teal-500 bg-white"
+                    }`}
+                  />
+                </div>
 
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2 justify-between">
-                      <h2 className="text-xl font-bold text-[#112D4E]">
-                        {exp.role}
-                      </h2>
-                      {exp.current && (
-                        <span className="px-3 py-1 bg-[#3F72AF]/20 text-[#3F72AF] rounded-full text-sm font-medium">
-                          Current
-                        </span>
-                      )}
+                {/* Experience Card */}
+                <div
+                  className={`md:w-[calc(50%-2.5rem)] ${
+                    index % 2 === 0
+                      ? "md:ml-[calc(50%+2.5rem)]"
+                      : "md:ml-0 md:mr-[calc(50%+2.5rem)]"
+                  }`}
+                >
+                  <div
+                    // Changed: Card styles for new palette and enhanced hover
+                    className={`bg-white p-6 rounded-xl border-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                      exp.current
+                        ? "border-teal-400 shadow-md"
+                        : "border-slate-200"
+                    }`}
+                  >
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                      <div className="w-16 h-16 min-w-[64px] rounded-lg bg-white p-2 border border-slate-200 shadow-sm">
+                        <Image
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          width={64}
+                          height={64}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-x-2 mb-1">
+                          <h2 className="text-xl font-bold text-slate-800">
+                            {exp.role}
+                          </h2>
+                          {exp.current && (
+                            // Changed: "Current" badge colors
+                            <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-semibold self-start sm:self-center">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-lg text-teal-600 font-semibold">
+                          {exp.company}
+                        </h3>
+                        {/* Changed: Text color for duration */}
+                        <p className="text-slate-500 mb-4 text-sm">
+                          {exp.duration}
+                        </p>
+                        <ul className="space-y-2 text-left">
+                          {exp.points.map((point, i) => (
+                            // Changed: Replaced bullet points with icons
+                            <li key={i} className="flex items-start gap-2">
+                              <HiCheckCircle
+                                className="text-teal-500 mt-1 shrink-0"
+                                size={18}
+                              />
+                              <span className="text-slate-600 text-sm md:text-base">
+                                {point}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <h3 className="text-lg text-[#3F72AF] font-medium">
-                      {exp.company}
-                    </h3>
-                    <p className="text-[#112D4E]/80 mb-4 text-sm">
-                      {exp.duration}
-                    </p>
-                    <ul className="space-y-2">
-                      {exp.points.map((point, i) => (
-                        <li key={i} className="flex items-start text-[#112D4E]">
-                          <span className="text-[#3F72AF] mr-2 mt-1">•</span>
-                          <span className="text-sm md:text-base">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
