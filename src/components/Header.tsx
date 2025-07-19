@@ -24,7 +24,8 @@ const Header = () => {
       {/* Desktop Header - Floating Glass Morphism */}
       <header className="hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
         <motion.div
-          className="bg-[#F9F7F7]/90 backdrop-blur-lg rounded-full border border-[#DBE2EF] shadow-xl"
+          // Changed: Background color to a light slate, border to a subtle slate gray
+          className="bg-slate-50/80 backdrop-blur-lg rounded-full border border-slate-300 shadow-xl"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
@@ -37,14 +38,17 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="absolute -inset-3 bg-[#3F72AF]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#112D4E] to-[#3F72AF] bg-clip-text text-transparent tracking-tight relative">
+                {/* Changed: Hover glow to the new accent color (teal) */}
+                <div className="absolute -inset-3 bg-teal-500/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                {/* Changed: Gradient text from slate to teal */}
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-teal-500 bg-clip-text text-transparent tracking-tight relative">
                   Akash Akter
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#3F72AF] to-[#112D4E]"
+                    // Changed: Underline gradient to match the new palette
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-teal-500 to-slate-800"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.4, origin: 0 }} // Added origin for better effect
                   />
                 </h1>
               </motion.div>
@@ -61,15 +65,19 @@ const Header = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <div className="flex flex-col items-center">
-                    <div className="text-[#3F72AF] group-hover:text-[#112D4E] transition-colors duration-300">
+                    {/* Changed: Icon color to a darker teal, hover to dark slate */}
+                    <div className="text-teal-600 group-hover:text-slate-800 transition-colors duration-300">
                       {icon}
                     </div>
-                    <span className="text-xs font-medium text-[#112D4E] mt-1">
+                    {/* Changed: Label text to a slightly lighter slate for hierarchy */}
+                    <span className="text-xs font-medium text-slate-700 mt-1">
                       {label}
                     </span>
                   </div>
-                  <div className="absolute inset-0 rounded-full bg-[#DBE2EF] opacity-0 group-hover:opacity-100 -z-10 transition-opacity duration-300" />
-                  <div className="absolute inset-0 rounded-full shadow-[0_0_12px_-2px_#3F72AF] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Changed: Background glow effect on hover to a subtle teal */}
+                  <div className="absolute inset-0 rounded-full bg-teal-500/10 opacity-0 group-hover:opacity-100 -z-10 transition-opacity duration-300" />
+                  {/* Changed: Outer shadow glow to the new accent color (teal) */}
+                  <div className="absolute inset-0 rounded-full shadow-[0_0_15px_-3px_rgba(20,184,166,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.button>
               ))}
             </nav>
@@ -78,11 +86,12 @@ const Header = () => {
       </header>
 
       {/* Mobile Header - Minimalist */}
-      <header className="md:hidden bg-[#F9F7F7] border-b border-[#DBE2EF] px-6 py-4">
+      <header className="md:hidden bg-slate-50 border-b border-slate-200 px-6 py-4 sticky top-0 z-40">
         <div className="flex justify-between items-center">
           <Link href="/">
             <motion.h1
-              className="text-xl font-bold bg-gradient-to-r from-[#112D4E] to-[#3F72AF] bg-clip-text text-transparent"
+              // Changed: Gradient text to match the new palette
+              className="text-xl font-bold bg-gradient-to-r from-slate-800 to-teal-500 bg-clip-text text-transparent"
               whileTap={{ scale: 0.95 }}
             >
               Akash Akter
@@ -94,8 +103,10 @@ const Header = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="absolute inset-0 bg-[#3F72AF] rounded-full blur-md opacity-0 hover:opacity-40 transition-opacity duration-300" />
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#3F72AF] relative">
+            {/* Changed: Hover glow to the new accent color (teal) */}
+            <div className="absolute inset-0 bg-teal-500 rounded-full blur-md opacity-0 hover:opacity-40 transition-opacity duration-300" />
+            {/* Changed: Border color to the new accent color (teal) */}
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-teal-500 relative">
               <Image
                 src="/profile.jpg"
                 alt="Profile"
