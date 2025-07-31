@@ -92,12 +92,3 @@ I have co-authored a peer-reviewed paper focused on mobile security.
 -   **[View on IEEE Xplore](https://doi.org/10.1109/ICAEEE62219.2024.10561780)**
 
 ---
-
-## 🏃‍♂️ Getting Started
-
-To run this project locally, follow these steps:
-
-**1. Clone the repository:**
-```bash
-git clone [https://github.com/AkashAkter/akash-akter-portfolio](https://github.com/AkashAkter/akash-akter-portfolio)
-cd your-repo-name
