@@ -90,5 +90,3 @@ I have co-authored a peer-reviewed paper focused on mobile security.
 -   **DOI:** `10.1109/ICAEEE62219.2024.10561780`
 -   **Abstract:** Investigated vulnerabilities in Android financial apps through permission analysis. We created a dataset of 12,050 samples and used K-Nearest Neighbor ($88.25\%$ accuracy) and Naive Bayes ($82.07\%$ accuracy) to detect malicious apps, providing a framework for enhanced mobile banking security.
 -   **[View on IEEE Xplore](https://doi.org/10.1109/ICAEEE62219.2024.10561780)**
-
----
