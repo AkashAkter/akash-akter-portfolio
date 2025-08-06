@@ -82,9 +82,7 @@ const ExperienceSection = () => {
           </p>
         </motion.div>
 
-        {/* Experience Timeline */}
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 sm:left-5 md:left-1/2 top-0 h-full w-0.5 bg-slate-200" />
 
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
@@ -97,7 +95,6 @@ const ExperienceSection = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 className={`relative pl-12 sm:pl-14 md:pl-0`}
               >
-                {/* Timeline Dot */}
                 <div
                   className={`absolute left-0 md:left-1/2 top-5 w-6 h-6 flex items-center justify-center -translate-x-1/2`}
                 >
@@ -110,7 +107,6 @@ const ExperienceSection = () => {
                   />
                 </div>
 
-                {/* Experience Card */}
                 <div
                   className={`md:w-[calc(50%-2rem)] ${
                     index % 2 === 0
