@@ -26,8 +26,6 @@ const ProjectDetailsClient = () => {
 
   // This check should ideally happen in a loading state or server-side
   if (!project) {
-    // router.push("/") can cause issues during server-side rendering.
-    // A "Not Found" component would be better here.
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         Project not found.
@@ -170,46 +168,53 @@ const ProjectDetailsClient = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center sm:justify-end mt-10 border-t border-slate-200 pt-6">
               {project.liveUrl && (
-                <Link href={project.liveUrl} passHref legacyBehavior>
-                  <motion.a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    // Changed: Primary button styling
-                    className="inline-block w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
+                <Link
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // Changed: Primary button styling
+                  className="inline-block w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
+                >
+                  <motion.span
+                    className="relative z-10 flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      <FaExternalLinkAlt /> Live Demo
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </motion.a>
+                    <FaExternalLinkAlt /> Live Demo
+                  </motion.span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               )}
-              <Link href={project.clientRepo} passHref legacyBehavior>
-                <motion.a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  // Changed: Secondary button styling
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-lg border border-slate-400 text-slate-600 font-semibold hover:bg-slate-100 hover:text-slate-800 transition-colors"
+              <Link
+                href={project.clientRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                // Changed: Secondary button styling
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-lg border border-slate-400 text-slate-600 font-semibold hover:bg-slate-100 hover:text-slate-800 transition-colors"
+              >
+                <motion.span
+                  className="flex items-center gap-2"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   <FaGithub /> Client Code
-                </motion.a>
+                </motion.span>
               </Link>
               {project.serverRepo && (
-                <Link href={project.serverRepo} passHref legacyBehavior>
-                  <motion.a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    // Changed: Secondary button styling
-                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-lg border border-slate-400 text-slate-600 font-semibold hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                <Link
+                  href={project.serverRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // Changed: Secondary button styling
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-lg border border-slate-400 text-slate-600 font-semibold hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                >
+                  <motion.span
+                    className="flex items-center gap-2"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                   >
                     <FaServer /> Server Code
-                  </motion.a>
+                  </motion.span>
                 </Link>
               )}
             </div>

@@ -57,6 +57,7 @@ const ProjectSection = () => {
                     alt={project.title}
                     fill
                     quality={90}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                   {/* Changed: Image overlay color */}
@@ -96,21 +97,18 @@ const ProjectSection = () => {
                   <div className="mt-auto">
                     <Link
                       href={`/projects/${project.id}`}
-                      passHref
-                      legacyBehavior
+                      // Changed: Button colors and refined hover animation
+                      className="inline-block w-fit px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
                     >
-                      <motion.a
-                        // Changed: Button colors and refined hover animation
-                        className="inline-block w-fit px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
+                      <motion.span
+                        className="relative z-10 flex items-center gap-2"
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                       >
-                        <span className="relative z-10 flex items-center gap-2">
-                          View Details
-                          <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                        </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </motion.a>
+                        View Details
+                        <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </motion.span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </Link>
                   </div>
                 </div>

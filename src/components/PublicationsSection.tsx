@@ -149,23 +149,20 @@ const PublicationsSection = () => {
           <div className="text-right">
             <Link
               href="https://ieeexplore.ieee.org/document/10561780"
-              passHref
-              legacyBehavior
+              target="_blank"
+              rel="noopener noreferrer"
+              // Changed: Button styling to match portfolio theme
+              className="inline-block w-fit px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
             >
-              <motion.a
-                target="_blank"
-                rel="noopener noreferrer"
-                // Changed: Button styling to match portfolio theme
-                className="inline-block w-fit px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
+              <motion.span
+                className="relative z-10 flex items-center gap-2"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  <FaExternalLinkAlt />
-                  View on IEEE Xplore
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.a>
+                <FaExternalLinkAlt />
+                View on IEEE Xplore
+              </motion.span>
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
         </motion.div>
