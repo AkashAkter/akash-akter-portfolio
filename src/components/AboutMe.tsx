@@ -63,7 +63,7 @@ const AboutMe = () => {
             </span>
           </h1>
           <p className="text-teal-600 text-center text-sm sm:text-base font-medium">
-            Full-Stack Developer | Problem Solver | Tech Enthusiast
+            MERN Stack Developer | Problem Solver | Tech Enthusiast
           </p>
         </motion.div>
 
