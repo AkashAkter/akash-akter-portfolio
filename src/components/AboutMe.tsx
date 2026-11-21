@@ -52,7 +52,7 @@ const AboutMe = () => {
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 sm:mb-4 text-center">
             <span className="relative inline-block">
-              ABOUT ME
+              ABOUT ME V2
               <motion.span
                 className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
                 initial={{ scaleX: 0 }}
