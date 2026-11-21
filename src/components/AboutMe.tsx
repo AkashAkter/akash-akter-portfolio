@@ -79,7 +79,7 @@ const AboutMe = () => {
             <p className="text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed sm:leading-relaxed mb-4 sm:mb-6">
               I'm a passionate{" "}
               <span className="font-semibold text-teal-600">
-                full-stack developer
+                MERN developer
               </span>{" "}
               with expertise in{" "}
               <span className="font-medium text-slate-800">
