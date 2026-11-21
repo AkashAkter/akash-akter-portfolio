@@ -5,8 +5,10 @@ export default function ProjectPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-          <div className="animate-pulse text-slate-400 text-lg">Loading project...</div>
+        <div className="min-h-screen bg-[var(--surface)] text-[var(--text)] flex items-center justify-center font-mono">
+          <div className="animate-pulse text-[var(--text-muted)] text-sm">
+            Loading case study...
+          </div>
         </div>
       }
     >

@@ -1,8 +1,181 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default, black --prefersdark, night;
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;
+
+  --radius-none: 0px;
+  --radius-mark: 3px;
+  --layout-content-max: 1280px;
+  --layout-prose-max: 68ch;
+  --layout-columns: 12;
+  --layout-column-gap: 24px;
+  --layout-nav-height: 64px;
+
+  /* Refined Botanical Emerald & Pine Green Color System (Dark Default) */
+  --brand-green: #10b981;
+  --brand-green-mint: #34d399;
+  --brand-green-deep: #064e3b;
+  --brand-forest: #059669;
+
+  --surface: #111714;
+  --surface-sunken: #16201b;
+  --surface-raised: #1c2822;
+  --surface-inverse: #f3f6f4;
+  --text: #eef3f0;
+  --text-muted: #95a39c;
+  --text-inverse: #111714;
+  --rule-strong: #eef3f0;
+  --rule: #27352f;
+  --grid-line: #95a39c26;
+  --accent-fill: #10b981;
+  --on-accent: #061811;
+  --accent-text: #34d399;
+  --focus-ring: #10b981;
+  --selection: #10b981;
+
+  /* Executive Deep Forest Footer Tokens */
+  --footer-bg: #0c1a14;
+  --footer-text: #eef3f0;
+  --footer-muted: #95a39c;
+  --footer-accent: #34d399;
+  --footer-card: #12241c;
+  --footer-border: #1a3328;
+
+  --font-logo: 'Syne', sans-serif;
+  --font-sans: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+
+html[data-theme="paper"] {
+  /* Clean Light Theme (Soft Studio Paper & Rich Emerald) */
+  --surface: #f7faf8;
+  --surface-sunken: #edf3f0;
+  --surface-raised: #ffffff;
+  --surface-inverse: #111714;
+  --text: #111815;
+  --text-muted: #526159;
+  --text-inverse: #f7faf8;
+  --rule-strong: #111815;
+  --rule: #d5ded9;
+  --grid-line: #52615926;
+  --accent-fill: #059669;
+  --on-accent: #ffffff;
+  --accent-text: #047857;
+  --focus-ring: #059669;
+  --selection: #10b981;
+
+  /* Footer in Light Theme (Refined Forest Green) */
+  --footer-bg: #064e3b;
+  --footer-text: #ffffff;
+  --footer-muted: #a7f3d0;
+  --footer-accent: #34d399;
+  --footer-card: #043f30;
+  --footer-border: #09614a;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--surface);
+  color: var(--text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  letter-spacing: -0.03em;
+}
+
+.font-logo {
+  font-family: var(--font-logo);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.rule-border {
+  border-color: var(--rule);
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--on-accent);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-text);
+}
+
+/* Carousel core layout helpers */
+.carousel { position: relative; width: 100%; }
+.carousel * { box-sizing: border-box; }
+.carousel img { width: 100%; display: inline-block; pointer-events: none; }
+.carousel .carousel { position: relative; }
+.carousel .control-arrow {
+  outline: 0; border: 0; background: none; top: 50%; margin-top: -13px; font-size: 18px;
+  cursor: pointer; position: absolute; z-index: 2; transition: all .25s ease-in; opacity: .5;
+}
+.carousel .control-arrow:focus, .carousel .control-arrow:hover { opacity: 1; }
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+  margin: 0 5px; display: inline-block; border-top: 8px solid transparent; border-bottom: 8px solid transparent; content: '';
+}
+.carousel .control-disabled.control-arrow { opacity: 0; cursor: inherit; display: none; }
+.carousel .control-prev.control-arrow { left: 0; }
+.carousel .control-prev.control-arrow:before { border-right: 8px solid #fff; }
+.carousel .control-next.control-arrow { right: 0; }
+.carousel .control-next.control-arrow:before { border-left: 8px solid #fff; }
+.carousel-root { outline: none; }
+.carousel .thumbs-wrapper { margin: 16px 0 0 0 !important; overflow: hidden; }
+.carousel .thumbs {
+  transition: all .15s ease-in; transform: translate3d(0, 0, 0); position: relative; list-style: none; white-space: nowrap; padding: 0; margin: 0;
+}
+.carousel .thumb {
+  transition: border .15s ease-in; display: inline-block; margin-right: 6px; white-space: nowrap; overflow: hidden;
+  border: 1px solid var(--rule) !important; border-radius: 2px !important; background-color: var(--surface-sunken) !important; padding: 2px !important; opacity: 0.7;
+}
+.carousel .thumb:focus { border: 1px solid var(--accent-text) !important; outline: none; }
+.carousel .thumb.selected, .carousel .thumb:hover { border-color: var(--accent-text) !important; opacity: 1; }
+.carousel .thumb img { vertical-align: top; max-height: 52px; width: auto; object-fit: cover; }
+.carousel.carousel-slider { position: relative; margin: 0; overflow: hidden; }
+.carousel.carousel-slider .control-arrow { top: 0; color: #fff; font-size: 26px; bottom: 0; margin-top: 0; padding: 5px; }
+.carousel.carousel-slider .control-arrow:hover { background: rgba(0,0,0,0.3); }
+.carousel .slider-wrapper { overflow: hidden; margin: auto; width: 100%; transition: height .15s ease-in; }
+.carousel .slider-wrapper.axis-horizontal .slider { display: flex; }
+.carousel .slider-wrapper.axis-horizontal .slider .slide { flex-direction: column; flex-flow: column; }
+.carousel .slider { margin: 0; padding: 0; position: relative; list-style: none; width: 100%; }
+.carousel .slider.animated { transition: all .35s ease-in-out; }
+.carousel .slide { min-width: 100%; margin: 0; position: relative; text-align: center; }
+.carousel .slide img { width: 100%; vertical-align: top; border: 0; }
+.carousel .control-dots { position: absolute; bottom: 0; margin: 10px 0; padding: 0; text-align: center; width: 100%; z-index: 1; }
+.carousel .control-dots .dot {
+  transition: opacity .25s ease-in; opacity: .3; background: var(--accent-text); border-radius: 50%; width: 7px; height: 7px; cursor: pointer; display: inline-block; margin: 0 5px;
+}
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover { opacity: 1; }
+.carousel .carousel-status { position: absolute; top: 0; right: 0; padding: 5px; font-size: 10px; color: var(--text-muted); }

@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { FaReact, FaGitAlt, FaGithub, FaPython, FaJava } from "react-icons/fa";
 import {
@@ -11,184 +12,121 @@ import {
   SiRedux,
   SiTensorflow,
   SiPytorch,
+  SiPostgresql,
+  SiDocker,
+  SiStripe,
 } from "react-icons/si";
 import { GiArtificialIntelligence } from "react-icons/gi";
 import { motion } from "framer-motion";
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Core Technologies",
-      skills: [
-        {
-          icon: <SiNextdotjs size={28} className="text-slate-800" />,
-          name: "Next.js",
-          color: "hover:shadow-[0_0_15px_rgba(0,0,0,0.2)]",
-        },
-        {
-          icon: <FaReact size={28} className="text-[#61DAFB]" />,
-          name: "React",
-          color: "hover:shadow-[0_0_15px_rgba(97,218,251,0.3)]",
-        },
-        {
-          icon: <SiExpress size={28} className="text-slate-800" />,
-          name: "Express",
-          color: "hover:shadow-[0_0_15px_rgba(104,104,104,0.2)]",
-        },
-        {
-          icon: <SiMongodb size={28} className="text-[#47A248]" />,
-          name: "MongoDB",
-          color: "hover:shadow-[0_0_15px_rgba(71,162,72,0.3)]",
-        },
-      ],
-    },
-    {
-      title: "Programming Languages",
-      skills: [
-        {
-          icon: <FaPython size={28} className="text-[#3776AB]" />,
-          name: "Python",
-          color: "hover:shadow-[0_0_15px_rgba(55,118,171,0.3)]",
-        },
-        {
-          icon: <FaJava size={28} className="text-[#007396]" />,
-          name: "Java",
-          color: "hover:shadow-[0_0_15px_rgba(0,115,150,0.3)]",
-        },
-        {
-          icon: <SiJavascript size={28} className="text-[#F7DF1E]" />,
-          name: "JavaScript",
-          color: "hover:shadow-[0_0_15px_rgba(247,223,30,0.3)]",
-        },
-        {
-          icon: <SiTypescript size={28} className="text-[#3178C6]" />,
-          name: "TypeScript",
-          color: "hover:shadow-[0_0_15px_rgba(49,120,198,0.3)]",
-        },
-      ],
-    },
-    {
-      title: "Machine Learning",
-      skills: [
-        {
-          icon: <SiTensorflow size={28} className="text-[#FF6F00]" />,
-          name: "TensorFlow",
-          color: "hover:shadow-[0_0_15px_rgba(255,111,0,0.3)]",
-        },
-        {
-          icon: <SiPytorch size={28} className="text-[#EE4C2C]" />,
-          name: "PyTorch",
-          color: "hover:shadow-[0_0_15px_rgba(238,76,44,0.3)]",
-        },
-        {
-          icon: (
-            <GiArtificialIntelligence size={28} className="text-[#7431A8]" />
-          ),
-          name: "Neural Nets",
-          color: "hover:shadow-[0_0_15px_rgba(116,49,168,0.3)]",
-        },
-        {
-          icon: (
-            <GiArtificialIntelligence size={28} className="text-[#00B0D8]" />
-          ),
-          name: "SVM",
-          color: "hover:shadow-[0_0_15px_rgba(0,176,216,0.3)]",
-        },
-      ],
-    },
-    {
-      title: "Tools & Platforms",
-      skills: [
-        {
-          icon: <SiTailwindcss size={28} className="text-[#06B6D4]" />,
-          name: "Tailwind",
-          color: "hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]",
-        },
-        {
-          icon: <SiRedux size={28} className="text-[#764ABC]" />,
-          name: "Redux",
-          color: "hover:shadow-[0_0_15px_rgba(118,74,188,0.3)]",
-        },
-        {
-          icon: <FaGitAlt size={28} className="text-[#F05032]" />,
-          name: "Git",
-          color: "hover:shadow-[0_0_15px_rgba(240,80,50,0.3)]",
-        },
-        {
-          icon: <FaGithub size={28} className="text-slate-800" />,
-          name: "GitHub",
-          color: "hover:shadow-[0_0_15px_rgba(0,0,0,0.2)]",
-        },
-      ],
-    },
-  ];
+const skillCategories = [
+  {
+    title: "Core Full-Stack",
+    subtitle: "Daily Drivers for High-Performance Web Apps",
+    skills: [
+      { name: "Next.js 16", icon: <SiNextdotjs className="text-slate-900" size={26} />, level: "Advanced" },
+      { name: "React 19", icon: <FaReact className="text-[#00D8FF]" size={26} />, level: "Advanced" },
+      { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" size={26} />, level: "Advanced" },
+      { name: "Node.js", icon: <span className="font-bold text-[#5FA04E] text-xl">Node</span>, level: "Advanced" },
+      { name: "Express.js", icon: <SiExpress className="text-slate-900" size={26} />, level: "Advanced" },
+      { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" size={26} />, level: "Advanced" },
+    ],
+  },
+  {
+    title: "Languages & Architecture",
+    subtitle: "Solid CS Foundation & Clean Code",
+    skills: [
+      { name: "JavaScript (ES6+)", icon: <SiJavascript className="text-[#F7DF1E]" size={26} />, level: "Advanced" },
+      { name: "Python", icon: <FaPython className="text-[#3776AB]" size={26} />, level: "Proficient" },
+      { name: "Java", icon: <FaJava className="text-[#007396]" size={26} />, level: "Intermediate" },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38BDF8]" size={26} />, level: "Advanced" },
+      { name: "Redux Toolkit", icon: <SiRedux className="text-[#764ABC]" size={26} />, level: "Advanced" },
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-[#4169E1]" size={26} />, level: "Proficient" },
+    ],
+  },
+  {
+    title: "Applied AI & Research",
+    subtitle: "Data Mining, Classification & ML Security",
+    skills: [
+      { name: "Machine Learning", icon: <GiArtificialIntelligence className="text-[#7C3AED]" size={26} />, level: "Research" },
+      { name: "TensorFlow", icon: <SiTensorflow className="text-[#FF6F00]" size={26} />, level: "Applied" },
+      { name: "PyTorch", icon: <SiPytorch className="text-[#EE4C2C]" size={26} />, level: "Applied" },
+      { name: "Data Analysis", icon: <span className="font-bold text-amber-500 text-xl">NumPy</span>, level: "Applied" },
+    ],
+  },
+  {
+    title: "Tooling & Cloud",
+    subtitle: "Deployment, Version Control & Integrations",
+    skills: [
+      { name: "Git & GitHub", icon: <FaGitAlt className="text-[#F05032]" size={26} />, level: "Advanced" },
+      { name: "Stripe API", icon: <SiStripe className="text-[#635BFF]" size={26} />, level: "Production" },
+      { name: "Docker", icon: <SiDocker className="text-[#2496ED]" size={26} />, level: "Container" },
+      { name: "Vercel / Cloud", icon: <span className="font-bold text-slate-900 text-xl">▲</span>, level: "Deployment" },
+    ],
+  },
+];
 
+const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="bg-slate-50 py-20 sm:py-24 md:py-32 px-4 sm:px-6"
-    >
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-24 sm:py-32 bg-white relative">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-12 md:mb-16 lg:mb-20"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 sm:mb-4">
-            <span className="relative inline-block">
-              MY TECH STACK
-              <motion.span
-                className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                viewport={{ once: true }}
-              />
-            </span>
-          </h1>
-          <p className="text-teal-600 text-sm sm:text-base font-medium">
-            Technologies I work with daily
+          <div className="inline-block px-4 py-1 rounded-full bg-[#5D3BEE]/10 text-[#5D3BEE] text-xs font-bold uppercase tracking-wider">
+            Tech Arsenal
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111827] tracking-tight">
+            Skills & Technologies
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base">
+            Modern, battle-tested tools and frameworks I use to engineer robust, high-performance web applications.
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
-          {skillCategories.map((category, index) => (
+        {/* Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillCategories.map((category, catIdx) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+              key={catIdx}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              className="bg-[#FAFAFC] rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-xs hover:border-[#5D3BEE]/40 transition-colors"
             >
-              <h2 className="text-xl sm:text-2xl font-semibold text-slate-800 mb-6 sm:mb-8 text-center">
-                {category.title}
-              </h2>
-              <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-                {category.skills.map((skill, idx) => (
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-[#111827] tracking-tight">
+                  {category.title}
+                </h3>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">
+                  {category.subtitle}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+                {category.skills.map((skill, sIdx) => (
                   <motion.div
-                    key={idx}
-                    whileHover={{ y: -5, scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className={`
-                      flex flex-col items-center justify-center p-3 sm:p-4 md:p-5 rounded-lg
-                      bg-slate-50 border border-slate-200
-                      transition-all duration-300 group
-                      hover:border-teal-300 hover:shadow-lg
-                      ${skill.color}
-                    `}
+                    key={sIdx}
+                    whileHover={{ y: -3, scale: 1.02 }}
+                    className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-md transition-all flex flex-col items-center text-center justify-between gap-3 min-h-[110px]"
                   >
-                    <div className="mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110">
+                    <div className="p-2 rounded-xl bg-slate-50 flex items-center justify-center">
                       {skill.icon}
                     </div>
-                    <p className="text-sm sm:text-base font-medium text-slate-700 transition-colors group-hover:text-teal-600">
-                      {skill.name}
-                    </p>
+                    <div>
+                      <p className="text-xs font-bold text-slate-800 leading-tight">
+                        {skill.name}
+                      </p>
+                      <span className="text-[10px] font-semibold text-slate-400 block mt-0.5">
+                        {skill.level}
+                      </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>

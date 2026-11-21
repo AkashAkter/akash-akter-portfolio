@@ -1,150 +1,153 @@
 "use client";
+
+import React from "react";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaAward, FaSchool } from "react-icons/fa";
+import { FiAward, FiBookOpen } from "react-icons/fi";
+import { FaGraduationCap } from "react-icons/fa";
+
+const educationData = [
+  {
+    id: 1,
+    year: "2020 - 2024",
+    degree: "B.Sc. in Computer Science & Engineering",
+    institution: "Pundra University of Science & Technology, Bogura",
+    highlights: [
+      { label: "CGPA", value: "3.56 / 4.00", prominent: true },
+      { label: "Thesis", value: "Classification of Malicious Financial Applications (IEEE Published)" },
+    ],
+    featured: true,
+  },
+  {
+    id: 2,
+    year: "2018",
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Govt. Shah Sultan College, Bogura",
+    highlights: [
+      { label: "GPA", value: "3.92 / 5.00", prominent: true },
+      { label: "Discipline", value: "Science Division" },
+    ],
+    featured: false,
+  },
+  {
+    id: 3,
+    year: "2016",
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Faizullah High School, Bogura",
+    highlights: [
+      { label: "GPA", value: "5.00 / 5.00 (Golden A+)", prominent: true },
+      { label: "Discipline", value: "Science Division" },
+    ],
+    featured: false,
+  },
+];
 
 const Educations = () => {
-  const educationData = [
-    {
-      id: 1,
-      year: "2020 - 2024",
-      degree: "B.Sc. in Computer Science & Engineering",
-      institution: "Pundra University of Science & Technology, Bogura",
-      details: [
-        { label: "CGPA", value: "3.56/4.00", highlight: true },
-        {
-          label: "Thesis",
-          value: "Classification of Malicious Financial Applications",
-        },
-      ],
-      icon: <FaGraduationCap size={22} />,
-    },
-    {
-      id: 2,
-      year: "2018",
-      degree: "Higher Secondary School Certificate",
-      institution: "Govt. Shah Sultan College, Bogura",
-      details: [
-        { label: "GPA", value: "3.92/5.00", highlight: true },
-        { label: "Group", value: "Science", highlight: true },
-      ],
-      icon: <FaSchool size={22} />,
-    },
-    {
-      id: 3,
-      year: "2016",
-      degree: "Secondary School Certificate",
-      institution: "Faizullah High School, Bogura",
-      details: [
-        { label: "GPA", value: "5.00/5.00", highlight: true },
-        { label: "Group", value: "Science", highlight: true },
-      ],
-      icon: <FaAward size={22} />,
-    },
-  ];
-
   return (
-    // Changed: Section background and decorative elements to match the new theme
-    <section
-      id="education"
-      className="relative bg-slate-50 py-24 md:py-32 px-6 overflow-hidden"
-    >
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-200 to-transparent opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-teal-500 opacity-5 blur-3xl"></div>
-
-      <div className="container max-w-6xl mx-auto relative">
-        {/* Section Header */}
+    <section id="education" className="py-24 sm:py-32 bg-white relative">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 md:mb-20"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            <span className="relative inline-block">
-              Academic Journey
-              <motion.span
-                // Changed: Underline gradient
-                className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                viewport={{ once: true }}
-              />
-            </span>
-          </h1>
-          <p className="text-teal-600 text-center text-sm md:text-base font-medium">
-            My educational background and achievements
+          <div className="inline-block px-4 py-1 rounded-full bg-[#5D3BEE]/10 text-[#5D3BEE] text-xs font-bold uppercase tracking-wider">
+            Academic Background
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111827] tracking-tight">
+            Education & Degrees
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base">
+            Formal foundations in computer science theory, algorithms, and applied software engineering.
           </p>
         </motion.div>
 
-        {/* Unique Timeline Layout */}
-        <div className="grid gap-y-16 gap-x-8 md:grid-cols-3">
-          {educationData.map((item, index) => (
+        {/* Education Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {educationData.map((item, idx) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              className="relative"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.12 }}
+              className={`rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 ${
+                item.featured
+                  ? "bg-[#111115] text-white shadow-xl ring-2 ring-[#5D3BEE]/40"
+                  : "bg-[#FAFAFC] text-[#111827] border border-slate-200/80 shadow-xs hover:shadow-lg"
+              }`}
             >
-              {/* Card */}
-              <div
-                // Changed: Card styling to use new palette directly
-                className="h-full p-6 pt-10 rounded-xl border-2 border-teal-400 bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-              >
-                {/* Icon with background */}
-                <div className="absolute -top-6 left-6 w-12 h-12 rounded-full bg-teal-500 text-white flex items-center justify-center">
-                  {item.icon}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
+                      item.featured
+                        ? "bg-[#5D3BEE] text-white"
+                        : "bg-amber-100 text-amber-700"
+                    }`}
+                  >
+                    {item.featured ? <FaGraduationCap size={22} /> : <FiBookOpen size={20} />}
+                  </div>
+                  <span
+                    className={`text-xs font-bold px-3 py-1 rounded-full ${
+                      item.featured
+                        ? "bg-white/10 text-amber-300"
+                        : "bg-slate-200/70 text-slate-700"
+                    }`}
+                  >
+                    {item.year}
+                  </span>
                 </div>
 
-                {/* Year */}
-                <div className="text-sm font-semibold text-teal-600 mb-2">
-                  {item.year}
-                </div>
-
-                {/* Degree */}
-                <h3 className="text-xl font-bold text-slate-800 mb-3 leading-tight">
-                  {item.degree}
-                </h3>
-
-                {/* Institution */}
-                <p className="text-slate-600 mb-5 border-l-2 border-teal-300 pl-3 py-1 italic">
-                  {item.institution}
-                </p>
-
-                {/* Details */}
-                <div className="space-y-2">
-                  {item.details.map((detail, i) => (
-                    <div key={i} className="flex items-start">
-                      <span
-                        // Changed: Bullet point colors
-                        className={`inline-block w-2 h-2 flex-shrink-0 rounded-full mt-1.5 mr-2 ${
-                          detail.highlight ? "bg-teal-500" : "bg-slate-300"
-                        }`}
-                      ></span>
-                      {/* Changed: Text colors */}
-                      <span className="text-sm text-slate-700">
-                        <span className="font-semibold">{detail.label}:</span>{" "}
-                        {detail.value}
-                      </span>
-                    </div>
-                  ))}
+                <div>
+                  <h3 className="text-lg font-bold leading-snug">
+                    {item.degree}
+                  </h3>
+                  <p
+                    className={`text-xs sm:text-sm mt-1.5 ${
+                      item.featured ? "text-slate-300" : "text-slate-600"
+                    }`}
+                  >
+                    {item.institution}
+                  </p>
                 </div>
               </div>
 
-              {/* Connector (visible on desktop) */}
-              {index < educationData.length - 1 && (
-                // Changed: Connector color
-                <div className="hidden md:block absolute top-1/2 right-0 w-8 h-0.5 bg-slate-300 transform translate-x-full -translate-y-1/2"></div>
-              )}
+              <div
+                className={`pt-6 border-t mt-6 space-y-2 ${
+                  item.featured ? "border-white/10" : "border-slate-200"
+                }`}
+              >
+                {item.highlights.map((hl, hIdx) => (
+                  <div key={hIdx} className="text-xs flex items-start justify-between gap-2">
+                    <span
+                      className={`font-medium ${
+                        item.featured ? "text-slate-400" : "text-slate-500"
+                      }`}
+                    >
+                      {hl.label}:
+                    </span>
+                    <span
+                      className={`font-bold text-right ${
+                        hl.prominent
+                          ? item.featured
+                            ? "text-[#FBBF24]"
+                            : "text-[#5D3BEE]"
+                          : item.featured
+                          ? "text-slate-200"
+                          : "text-slate-700"
+                      }`}
+                    >
+                      {hl.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom decorative line */}
-        <div className="mt-20 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"></div>
       </div>
     </section>
   );

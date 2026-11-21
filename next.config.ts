@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   allowedDevOrigins: ["10.10.13.162"],
   images: {
-    qualities: [75, 90, 95],
+    qualities: [75, 90, 92, 95],
     remotePatterns: [
       {
         protocol: "https",

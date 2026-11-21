@@ -1,119 +1,269 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import projectsData from "../../projects.json";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa"; // Using a consistent icon
+
+const caseStudies = [
+  {
+    num: "01 / 03",
+    tag: "CLIENT PROJECT",
+    title: "GymTrek",
+    description:
+      "A comprehensive fitness & gym management SaaS running member lifecycles, schedules, and automated billing.",
+    metricNum: "9",
+    metricText: "business modules, from member CRM to automated Stripe billing",
+    specs: [
+      { label: "ROLE", value: "Lead full-stack developer" },
+      {
+        label: "STATUS",
+        isStatus: true,
+        statusText: "gym-trek-client.vercel.app",
+        statusUrl: "https://gym-trek-client.vercel.app/",
+      },
+      {
+        label: "STACK",
+        value: "React · TypeScript · Redux Toolkit · Tailwind · Stripe",
+      },
+      {
+        label: "SOURCE",
+        isLink: true,
+        linkText: "github.com/AkashAkter/gym-trek-client",
+        linkUrl: "https://github.com/AkashAkter/gym-trek-client",
+      },
+    ],
+    caseStudyUrl: "/projects/1",
+    image: "/GymTrek/GymTrek.png",
+    browserUrl: "gym-trek-client.vercel.app",
+    caption: "SCREENSHOT · MAIN DASHBOARD",
+  },
+  {
+    num: "02 / 03",
+    tag: "CLIENT PROJECT",
+    title: "AutoBuzz",
+    description:
+      "An automobile dealership platform running multi-criteria vehicle searches, inventory management, and financing calculations.",
+    metricNum: "5",
+    metricText: "business areas moved off paper, from inventory to appointments",
+    specs: [
+      { label: "ROLE", value: "Full-stack developer" },
+      {
+        label: "STATUS",
+        isStatus: true,
+        statusText: "auto-buzz-28ba2.web.app",
+        statusUrl: "https://auto-buzz-28ba2.web.app/",
+      },
+      {
+        label: "BUILT",
+        value: "REST API with JWT auth, multi-criteria vehicle filtering",
+      },
+      {
+        label: "STACK",
+        value: "Next.js · TypeScript · Express · MongoDB · Tailwind CSS",
+      },
+      {
+        label: "SOURCE",
+        isLink: true,
+        linkText: "github.com/AkashAkter/auto-buzz-client-repo",
+        linkUrl: "https://github.com/AkashAkter/auto-buzz-client-repo",
+      },
+    ],
+    caseStudyUrl: "/projects/2",
+    image: "/AutoBuzz/AutoBuzz.png",
+    browserUrl: "auto-buzz-28ba2.web.app",
+    caption: "SCREENSHOT · AUTOBUZZ PLATFORM",
+  },
+  {
+    num: "03 / 03",
+    tag: "RESEARCH THESIS & ML SYSTEM",
+    title: "Dalvik Classifier",
+    description:
+      "Static Dalvik bytecode feature extractor and empirical classifier for financial application security.",
+    metricNum: "12,050",
+    metricText: "Android application binaries evaluated across 1,438 static bytecode attributes",
+    specs: [
+      { label: "TYPE", value: "Peer-Reviewed IEEE Conference Paper" },
+      {
+        label: "STATUS",
+        isStatus: true,
+        statusText: "PUBLISHED IEEE ICAEEE 2024",
+        statusUrl: "https://ieeexplore.ieee.org/document/10561780",
+      },
+      {
+        label: "ACCURACY",
+        value: "88.25% K-NN Benchmark Detection Accuracy",
+      },
+      {
+        label: "STACK",
+        value: "Python · Scikit-learn · Dalvik Disassembler · K-NN",
+      },
+      {
+        label: "SOURCE",
+        isLink: true,
+        linkText: "github.com/AkashAkter/android-malware-detection",
+        linkUrl: "https://github.com/AkashAkter",
+      },
+    ],
+    note: "Empirical study across 12,050 binaries, published in IEEE Xplore.",
+    caseStudyUrl: "/projects/3",
+    image: "/AutoLimpio/AutoLimpio.png",
+    browserUrl: "ieeexplore.ieee.org/document/10561780",
+    caption: "SCREENSHOT · IEEE MALWARE DETECTION PIPELINE",
+  },
+];
 
 const ProjectSection = () => {
   return (
-    // Changed: Section background to white for contrast, and standardized padding.
-    <section id="projects" className="bg-white py-24 md:py-32">
-      <div className="container max-w-6xl mx-auto px-6">
-        {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16 md:mb-20"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            <span className="relative inline-block">
-              MY PROJECTS
-              <motion.span
-                // Changed: Gradient to match new palette
-                className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-teal-500 to-slate-800"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                viewport={{ once: true }}
-              />
-            </span>
-          </h1>
-          <p className="text-teal-600 text-center text-sm md:text-base font-medium">
-            A showcase of my development work and solutions
-          </p>
-        </motion.div>
+    <section
+      id="work"
+      className="py-16 sm:py-24 bg-[var(--surface)] text-[var(--text)] border-t border-[var(--rule)] transition-colors duration-200"
+    >
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
+        {/* Section Header matching Nuwantha PDF Page 1 */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 border-b border-[var(--rule)] gap-4 mb-16">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--text-muted)] font-bold mb-1">
+              CASE STUDIES
+            </p>
+            <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--text)]">
+              Shipped
+            </h2>
+          </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-12">
-          {projectsData.projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-              // Changed: Card background, border, and hover effect for better aesthetics
-              className="bg-slate-50 rounded-xl border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+          <p className="font-mono text-xs text-[var(--text-muted)]">
+            3 in use today
+          </p>
+        </div>
+
+        {/* Case Studies List matching Nuwantha 2-Column Grid */}
+        <div className="space-y-20 sm:space-y-28">
+          {caseStudies.map((study, idx) => (
+            <div
+              key={idx}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start pt-12 first:pt-0 border-t first:border-t-0 border-[var(--rule)]"
             >
-              <div className="flex flex-col lg:flex-row">
-                {/* Project Image */}
-                <div className="lg:w-1/2 aspect-video relative overflow-hidden">
-                  <Image
-                    src={project.mainImage}
-                    alt={project.title}
-                    fill
-                    quality={90}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-                  />
-                  {/* Changed: Image overlay color */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              {/* Left Column: Specs & Read case study (5 cols) */}
+              <div className="lg:col-span-5 space-y-6">
+                <div>
+                  <span className="font-mono text-[11px] text-[var(--text-muted)] uppercase tracking-wider block mb-1">
+                    CASE STUDY {study.num} · {study.tag}
+                  </span>
+                  <h3 className="text-4xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight">
+                    {study.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed mt-3">
+                    {study.description}
+                  </p>
                 </div>
 
-                {/* Project Details */}
-                <div className="lg:w-1/2 p-6 md:p-8 flex flex-col">
-                  {/* Changed: Text colors */}
-                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">
-                    {project.title}
-                  </h2>
-                  <p className="text-slate-600 mb-6 text-base leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="mb-8">
-                    {/* Changed: Heading color */}
-                    <h3 className="text-lg font-semibold text-teal-600 mb-3">
-                      Technologies Used
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          // Changed: Tech tag colors for better visibility
-                          className="px-3 py-1 text-xs md:text-sm rounded-full bg-teal-100 text-teal-800 font-medium"
+                {/* Specs Table */}
+                <div className="pt-2 border-t border-[var(--rule)] font-mono text-xs space-y-2">
+                  {study.specs.map((spec, sIdx) => (
+                    <div
+                      key={sIdx}
+                      className="flex items-start py-2 border-b border-[var(--rule)]"
+                    >
+                      <span className="w-24 text-[var(--text-muted)] shrink-0 text-[11px] uppercase">
+                        {spec.label}
+                      </span>
+                      {spec.isStatus ? (
+                        <a
+                          href={spec.statusUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[var(--radius-mark)] bg-[var(--accent-fill)] text-[var(--on-accent)] font-bold text-[10px] hover:opacity-90 transition-opacity truncate"
                         >
-                          {tech}
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--on-accent)]" />
+                          <span>LIVE</span>
+                          <span className="opacity-80 font-normal ml-0.5 truncate">
+                            {spec.statusText}
+                          </span>
+                        </a>
+                      ) : spec.isLink ? (
+                        <a
+                          href={spec.linkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[var(--text-muted)] hover:text-[var(--text)] transition-colors truncate"
+                        >
+                          {spec.linkText} →
+                        </a>
+                      ) : (
+                        <span className="text-[var(--text)] leading-normal">
+                          {spec.value}
                         </span>
-                      ))}
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {study.note && (
+                  <p className="font-mono text-xs text-[var(--text-muted)] italic">
+                    {study.note}
+                  </p>
+                )}
+
+                {/* Read Case Study Link */}
+                <div className="pt-2 font-mono text-xs">
+                  <Link
+                    href={study.caseStudyUrl}
+                    className="font-bold text-[var(--text)] hover:text-[var(--accent-text)] transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>Read the case study</span>
+                    <span>→</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: Stat & Browser Mockup (7 cols) */}
+              <div className="lg:col-span-7 space-y-4">
+                {/* Metric Callout */}
+                <div className="flex items-baseline gap-4 font-mono">
+                  <span className="text-5xl sm:text-7xl font-extrabold text-[var(--text)] tracking-tight font-sans">
+                    {study.metricNum}
+                  </span>
+                  <p className="text-xs sm:text-sm text-[var(--text-muted)] max-w-sm leading-snug">
+                    {study.metricText}
+                  </p>
+                </div>
+
+                {/* Realistic Browser Frame Mockup matching Nuwantha */}
+                <div className="border border-[var(--rule)] bg-[#0d1210] rounded-[var(--radius-mark)] overflow-hidden shadow-2xl space-y-0">
+                  {/* Browser Chrome Header */}
+                  <div className="px-3.5 py-2.5 bg-[#141b17] border-b border-[var(--rule)] flex items-center gap-3">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#27352f]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#27352f]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#27352f]" />
+                    </div>
+
+                    <div className="px-2.5 py-0.5 bg-[#0d1210] border border-[var(--rule)] rounded-[2px] text-[10px] font-mono text-[var(--text-muted)] flex items-center gap-1.5 flex-1 max-w-[260px] truncate">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-fill)]" />
+                      <span className="truncate">{study.browserUrl}</span>
                     </div>
                   </div>
 
-                  {/* View Details Button */}
-                  <div className="mt-auto">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      // Changed: Button colors and refined hover animation
-                      className="inline-block w-fit px-6 py-3 rounded-lg bg-gradient-to-r from-slate-800 to-teal-600 text-white font-semibold shadow-lg hover:shadow-teal-500/30 transition-shadow duration-300 group relative overflow-hidden"
-                    >
-                      <motion.span
-                        className="relative z-10 flex items-center gap-2"
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        View Details
-                        <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                      </motion.span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </Link>
+                  {/* Screenshot Image */}
+                  <div className="relative aspect-[16/10] w-full bg-[#111714] overflow-hidden">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 720px"
+                      quality={90}
+                      className="object-cover object-top hover:scale-[1.01] transition-transform duration-500"
+                    />
                   </div>
                 </div>
+
+                {/* Caption below right */}
+                <div className="text-right">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
+                    {study.caption}
+                  </span>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
