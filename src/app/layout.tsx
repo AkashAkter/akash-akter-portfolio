@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Iceland } from "next/font/google";
 import "./globals.css";
-
-import { Iceland } from "next/font/google";
-
-// @next-codemod-ignore Cache Components adoption: this segment temporarily allows blocking.
-// Remove this opt-out after verifying the segment passes validation without it.
-// See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
-export const instant = false;
 
 const icelandFont = Iceland({
   subsets: ["latin"],
